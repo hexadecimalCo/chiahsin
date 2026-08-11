@@ -43,10 +43,10 @@ export const coreServices = [
 
 export const processSteps = [
   { number: "1", title: "公司名稱預查", duration: "約 1-3 個工作天" },
-  { number: "2", title: "投資審查申請", duration: "約 2-4 週" },
+  { number: "2", title: "投資審議申請", duration: "約 2-4 週" },
   { number: "3", title: "公司登記", duration: "取得統一編號" },
   { number: "4", title: "銀行開戶", duration: "協助準備文件" },
-  { number: "5", title: "稅務登記", duration: "完成雙證申報準備" },
+  { number: "5", title: "稅務登記", duration: "完成首次申報準備" },
 ];
 
 export const clientTypes = [

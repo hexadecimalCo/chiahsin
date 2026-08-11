@@ -1,13 +1,10 @@
 import type { MetadataRoute } from "next";
-import { prisma } from "@/lib/prisma";
+import { getAllArticles } from "@/lib/articles";
 
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+export default function sitemap(): MetadataRoute.Sitemap {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
-  const articles = await prisma.article.findMany({
-    where: { status: "PUBLISHED" },
-    select: { slug: true, updatedAt: true },
-  });
+  const articles = getAllArticles();
 
   return [
     { url: siteUrl, lastModified: new Date() },

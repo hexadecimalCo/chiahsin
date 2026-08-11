@@ -1,6 +1,10 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { prisma } from "@/lib/prisma";
+import { getAllArticles, getArticleBySlug } from "@/lib/articles";
+
+export function generateStaticParams() {
+  return getAllArticles().map((article) => ({ slug: article.slug }));
+}
 
 export async function generateMetadata({
   params,
@@ -8,7 +12,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const article = await prisma.article.findUnique({ where: { slug } });
+  const article = getArticleBySlug(slug);
   if (!article) return {};
   return {
     title: article.title,
@@ -27,9 +31,9 @@ export default async function ArticlePage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const article = await prisma.article.findUnique({ where: { slug } });
+  const article = getArticleBySlug(slug);
 
-  if (!article || article.status !== "PUBLISHED") notFound();
+  if (!article) notFound();
 
   const jsonLd = {
     "@context": "https://schema.org",

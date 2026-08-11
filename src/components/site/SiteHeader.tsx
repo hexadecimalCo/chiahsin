@@ -12,12 +12,19 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 bg-brand-navy">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <Link href="/" className="text-base font-semibold tracking-wide text-brand-gold">
-          佾廷會計師事務所
+        <Link
+          href="/"
+          className="text-base font-semibold tracking-wide text-white"
+        >
+          佾廷<span className="text-brand-gold">會計師事務所</span>{" "}
         </Link>
         <nav className="hidden gap-7 text-sm text-white/80 md:flex">
-          {navItems.map((item) => (
-            <a key={item.href} href={item.href} className="transition hover:text-brand-gold">
+          {navItems.map(item => (
+            <a
+              key={item.href}
+              href={item.href}
+              className="transition hover:text-brand-gold"
+            >
               {item.label}
             </a>
           ))}

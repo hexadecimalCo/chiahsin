@@ -1,14 +1,11 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { prisma } from "@/lib/prisma";
+import { getAllArticles } from "@/lib/articles";
 
 export const metadata: Metadata = { title: "文章專欄" };
 
-export default async function BlogListPage() {
-  const articles = await prisma.article.findMany({
-    where: { status: "PUBLISHED" },
-    orderBy: { publishedAt: "desc" },
-  });
+export default function BlogListPage() {
+  const articles = getAllArticles();
 
   return (
     <div className="mx-auto max-w-4xl px-6 py-16">
@@ -16,7 +13,7 @@ export default async function BlogListPage() {
       <div className="space-y-6">
         {articles.map((article) => (
           <Link
-            key={article.id}
+            key={article.slug}
             href={`/blog/${article.slug}`}
             className="block rounded-lg border border-slate-200 p-5 transition hover:shadow-md"
           >

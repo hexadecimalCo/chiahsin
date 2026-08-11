@@ -4,6 +4,7 @@ import { ProcessSection } from "@/components/site/ProcessSection";
 import { ClientTypesSection } from "@/components/site/ClientTypesSection";
 import { FaqSection } from "@/components/site/FaqSection";
 import { CtaSection } from "@/components/site/CtaSection";
+import { InstagramFeedSection } from "@/components/site/InstagramFeedSection";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <ClientTypesSection />
       <FaqSection />
       <CtaSection />
+      <InstagramFeedSection />
     </>
   );
 }

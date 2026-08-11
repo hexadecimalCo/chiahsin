@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { prisma } from "@/lib/prisma";
+import { getAllArticles } from "@/lib/articles";
 
 export const metadata: Metadata = { title: "搜尋" };
 
@@ -11,18 +11,14 @@ export default async function SearchPage({
 }) {
   const { q = "" } = await searchParams;
   const query = q.trim();
+  const needle = query.toLowerCase();
 
   const results = query
-    ? await prisma.article.findMany({
-        where: {
-          status: "PUBLISHED",
-          OR: [
-            { title: { contains: query, mode: "insensitive" } },
-            { excerpt: { contains: query, mode: "insensitive" } },
-          ],
-        },
-        orderBy: { publishedAt: "desc" },
-      })
+    ? getAllArticles().filter(
+        (article) =>
+          article.title.toLowerCase().includes(needle) ||
+          article.excerpt?.toLowerCase().includes(needle)
+      )
     : [];
 
   return (
@@ -47,7 +43,7 @@ export default async function SearchPage({
       <div className="space-y-4">
         {results.map((article) => (
           <Link
-            key={article.id}
+            key={article.slug}
             href={`/blog/${article.slug}`}
             className="block rounded-lg border border-slate-200 p-4 hover:shadow-md"
           >

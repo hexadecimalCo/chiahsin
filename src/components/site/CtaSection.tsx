@@ -10,7 +10,7 @@ export function CtaSection() {
         </p>
         <a
           href="/contact"
-          className="mt-8 inline-block rounded bg-brand-gold px-6 py-3 text-sm font-medium text-brand-navy transition hover:bg-brand-gold-hover"
+          className="mt-8 inline-block rounded bg-[#b08d4e] px-6 py-3 text-sm font-medium text-brand-navy transition hover:opacity-90"
         >
           預約諮詢
         </a>

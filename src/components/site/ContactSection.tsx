@@ -67,7 +67,7 @@ export function ContactSection() {
         <button
           type="submit"
           disabled={pending}
-          className="w-full rounded bg-brand-gold px-4 py-2.5 text-sm font-medium text-brand-navy transition hover:bg-brand-gold-hover disabled:opacity-50"
+          className="w-full rounded bg-[#b08d4e] px-4 py-2.5 text-sm font-medium text-brand-navy transition hover:opacity-90 disabled:opacity-50"
         >
           {pending ? "送出中…" : "Submit"}
         </button>
