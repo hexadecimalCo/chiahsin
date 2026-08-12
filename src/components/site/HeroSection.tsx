@@ -1,6 +1,10 @@
-import { heroContent } from "@/content/site-content";
+import { Link } from "@/i18n/navigation";
+import { getSiteContent } from "@/content/site-content";
+import type { Locale } from "@/i18n/routing";
 
-export function HeroSection() {
+export function HeroSection({ locale }: { locale: Locale }) {
+  const { heroContent } = getSiteContent(locale);
+
   return (
     <section className="relative overflow-hidden bg-gradient-to-b bg-[#1d2c42]">
       <div className="pointer-events-none absolute inset-0 z-0" aria-hidden>
@@ -16,18 +20,18 @@ export function HeroSection() {
         </h1>
         <p className="mt-5 max-w-2xl text-white/70">{heroContent.subtitle}</p>
         <div className="mt-8 flex flex-wrap items-center gap-4">
-          <a
+          <Link
             href={heroContent.primaryCta.href}
             className="rounded-md bg-[#b08d4e] px-6 py-3 text-sm font-medium text-brand-navy transition hover:opacity-90"
           >
             {heroContent.primaryCta.label}
-          </a>
-          <a
+          </Link>
+          <Link
             href={heroContent.secondaryCta.href}
             className="rounded-md border border-white/40 px-6 py-3 text-sm font-medium text-white transition hover:border-white/60"
           >
             {heroContent.secondaryCta.label}
-          </a>
+          </Link>
         </div>
       </div>
     </section>

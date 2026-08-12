@@ -1,0 +1,46 @@
+{
+  "nav": {
+    "home": "首頁",
+    "services": "服務項目",
+    "guide": "外商來台指南",
+    "about": "關於我們",
+    "contact": "聯絡我們"
+  },
+  "footer": {
+    "phone": "電話",
+    "email": "Email",
+    "line": "LINE",
+    "rights": "All Rights Reserved."
+  },
+  "languageSwitcher": {
+    "zh": "中文",
+    "en": "English",
+    "ja": "日本語"
+  },
+  "blog": {
+    "title": "文章專欄",
+    "empty": "目前還沒有文章"
+  },
+  "search": {
+    "title": "搜尋",
+    "placeholder": "搜尋文章…",
+    "resultsFor": "「{query}」的搜尋結果（{count}）",
+    "empty": "沒有找到相關結果"
+  },
+  "contactForm": {
+    "title": "聯絡我們",
+    "name": "姓名",
+    "email": "Email",
+    "message": "訊息",
+    "submit": "送出",
+    "submitting": "送出中…"
+  },
+  "notFound": {
+    "title": "找不到這個頁面",
+    "description": "您要找的頁面不存在，或已經被移除。",
+    "backHome": "回到首頁"
+  },
+  "lineButton": {
+    "label": "加入 LINE 好友"
+  }
+}

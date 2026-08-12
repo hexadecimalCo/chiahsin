@@ -1,11 +1,18 @@
-import { clientTypes } from "@/content/site-content";
+import { getSiteContent } from "@/content/site-content";
+import type { Locale } from "@/i18n/routing";
 
-export function ClientTypesSection() {
+export function ClientTypesSection({ locale }: { locale: Locale }) {
+  const { clientTypes, sectionHeaders } = getSiteContent(locale);
+
   return (
     <section id="about" className="bg-brand-cream py-20">
       <div className="mx-auto max-w-6xl px-6">
-        <p className="mb-2 text-xs font-semibold tracking-[0.15em] text-brand-green">適合對象</p>
-        <h2 className="text-2xl font-bold text-brand-navy md:text-3xl">我們熟悉的客戶類型</h2>
+        <p className="mb-2 text-xs font-semibold tracking-[0.15em] text-brand-green">
+          {sectionHeaders.clientTypes.eyebrow}
+        </p>
+        <h2 className="text-2xl font-bold text-brand-navy md:text-3xl">
+          {sectionHeaders.clientTypes.title}
+        </h2>
 
         <div className="mt-10 space-y-5">
           {clientTypes.map((client) => (

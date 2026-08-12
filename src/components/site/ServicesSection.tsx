@@ -1,15 +1,21 @@
-import { coreServices } from "@/content/site-content";
+import { Link } from "@/i18n/navigation";
+import { getSiteContent } from "@/content/site-content";
+import type { Locale } from "@/i18n/routing";
 
-export function ServicesSection() {
+export function ServicesSection({ locale }: { locale: Locale }) {
+  const { coreServices, sectionHeaders } = getSiteContent(locale);
+
   return (
     <section id="services" className="bg-brand-cream">
       <div className="mx-auto max-w-6xl px-6 py-20">
-        <p className="mb-2 text-xs font-semibold tracking-[0.15em] text-brand-green">核心服務</p>
+        <p className="mb-2 text-xs font-semibold tracking-[0.15em] text-brand-green">
+          {sectionHeaders.services.eyebrow}
+        </p>
         <h2 className="text-2xl font-bold text-brand-navy md:text-3xl">
-          四大服務，涵蓋設立到營運的每一步
+          {sectionHeaders.services.title}
         </h2>
         <p className="mt-3 max-w-2xl text-sm text-neutral-500">
-          從公司登記到日常帳務，我們提供一站式服務，降低外商在台展業的行政負擔。
+          {sectionHeaders.services.subtitle}
         </p>
 
         <div className="mt-10 space-y-6">
@@ -23,12 +29,12 @@ export function ServicesSection() {
               </span>
               <h3 className="mb-2 text-lg font-semibold text-brand-navy">{service.title}</h3>
               <p className="text-sm text-neutral-500">{service.description}</p>
-              <a
+              <Link
                 href="/contact"
                 className="mt-4 inline-block text-sm font-medium text-brand-green hover:underline"
               >
                 {service.linkLabel} →
-              </a>
+              </Link>
             </div>
           ))}
         </div>

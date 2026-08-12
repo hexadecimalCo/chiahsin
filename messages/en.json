@@ -1,0 +1,46 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "guide": "Guide for Foreign Investors",
+    "about": "About Us",
+    "contact": "Contact"
+  },
+  "footer": {
+    "phone": "Phone",
+    "email": "Email",
+    "line": "LINE",
+    "rights": "All Rights Reserved."
+  },
+  "languageSwitcher": {
+    "zh": "中文",
+    "en": "English",
+    "ja": "日本語"
+  },
+  "blog": {
+    "title": "Articles",
+    "empty": "No articles yet"
+  },
+  "search": {
+    "title": "Search",
+    "placeholder": "Search articles…",
+    "resultsFor": "Results for \"{query}\" ({count})",
+    "empty": "No results found"
+  },
+  "contactForm": {
+    "title": "Contact Us",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "submit": "Submit",
+    "submitting": "Submitting…"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "The page you're looking for doesn't exist or has been removed.",
+    "backHome": "Back to home"
+  },
+  "lineButton": {
+    "label": "Add us on LINE"
+  }
+}

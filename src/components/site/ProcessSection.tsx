@@ -1,14 +1,20 @@
-import { processSteps } from "@/content/site-content";
+import { Link } from "@/i18n/navigation";
+import { getSiteContent } from "@/content/site-content";
+import type { Locale } from "@/i18n/routing";
 
-export function ProcessSection() {
+export function ProcessSection({ locale }: { locale: Locale }) {
+  const { processSteps, sectionHeaders } = getSiteContent(locale);
+
   return (
     <section id="process" className="bg-brand-navy py-20">
       <div className="mx-auto max-w-6xl px-6">
-        <p className="mb-2 text-xs font-semibold tracking-[0.15em] text-brand-gold">設立流程</p>
-        <h2 className="text-2xl font-bold text-white md:text-3xl">從決定到營運，五個階段</h2>
-        <p className="mt-3 max-w-2xl text-sm text-white/70">
-          一般約需 1-2 個月，實際時程依產業別與文件備齊速度而有所不同。
+        <p className="mb-2 text-xs font-semibold tracking-[0.15em] text-brand-gold">
+          {sectionHeaders.process.eyebrow}
         </p>
+        <h2 className="text-2xl font-bold text-white md:text-3xl">
+          {sectionHeaders.process.title}
+        </h2>
+        <p className="mt-3 max-w-2xl text-sm text-white/70">{sectionHeaders.process.subtitle}</p>
 
         <div className="relative mt-16">
           <div className="absolute left-[10%] right-[10%] top-5 hidden h-px bg-white/15 sm:block" />
@@ -26,12 +32,12 @@ export function ProcessSection() {
         </div>
 
         <div className="mt-12 text-center">
-          <a
+          <Link
             href="/contact"
             className="inline-block rounded bg-[#b08d4e] px-6 py-3 text-sm font-medium text-brand-navy transition hover:opacity-90"
           >
-            查看完整流程
-          </a>
+            {sectionHeaders.process.cta}
+          </Link>
         </div>
       </div>
     </section>

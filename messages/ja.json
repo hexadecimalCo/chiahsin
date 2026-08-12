@@ -1,0 +1,46 @@
+{
+  "nav": {
+    "home": "ホーム",
+    "services": "サービス内容",
+    "guide": "外資進出ガイド",
+    "about": "私たちについて",
+    "contact": "お問い合わせ"
+  },
+  "footer": {
+    "phone": "電話",
+    "email": "Email",
+    "line": "LINE",
+    "rights": "All Rights Reserved."
+  },
+  "languageSwitcher": {
+    "zh": "中文",
+    "en": "English",
+    "ja": "日本語"
+  },
+  "blog": {
+    "title": "コラム",
+    "empty": "まだ記事はありません"
+  },
+  "search": {
+    "title": "検索",
+    "placeholder": "記事を検索…",
+    "resultsFor": "「{query}」の検索結果（{count}件）",
+    "empty": "該当する記事が見つかりませんでした"
+  },
+  "contactForm": {
+    "title": "お問い合わせ",
+    "name": "お名前",
+    "email": "Email",
+    "message": "メッセージ",
+    "submit": "送信",
+    "submitting": "送信中…"
+  },
+  "notFound": {
+    "title": "ページが見つかりません",
+    "description": "お探しのページは存在しないか、削除された可能性があります。",
+    "backHome": "トップページに戻る"
+  },
+  "lineButton": {
+    "label": "LINEで友だち追加"
+  }
+}

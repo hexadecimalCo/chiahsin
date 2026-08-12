@@ -1,17 +1,19 @@
 "use client";
 
 import { useActionState } from "react";
+import { useTranslations } from "next-intl";
 import { submitContactAction, type ContactState } from "@/lib/actions/contact-action";
 
 const initialState: ContactState = {};
 
 export function ContactSection() {
+  const t = useTranslations("contactForm");
   const [state, formAction, pending] = useActionState(submitContactAction, initialState);
 
   return (
     <section id="contact" className="mx-auto max-w-2xl px-6 py-20">
       <h2 className="mb-10 text-center text-2xl font-bold text-brand-navy md:text-3xl">
-        聯絡我們
+        {t("title")}
       </h2>
       <form action={formAction} className="space-y-4">
         <input
@@ -24,7 +26,7 @@ export function ContactSection() {
         />
         <div>
           <label className="mb-1 block text-sm font-medium text-brand-navy" htmlFor="name">
-            Name
+            {t("name")}
           </label>
           <input
             id="name"
@@ -35,7 +37,7 @@ export function ContactSection() {
         </div>
         <div>
           <label className="mb-1 block text-sm font-medium text-brand-navy" htmlFor="email">
-            Email
+            {t("email")}
           </label>
           <input
             id="email"
@@ -47,7 +49,7 @@ export function ContactSection() {
         </div>
         <div>
           <label className="mb-1 block text-sm font-medium text-brand-navy" htmlFor="message">
-            訊息
+            {t("message")}
           </label>
           <textarea
             id="message"
@@ -69,7 +71,7 @@ export function ContactSection() {
           disabled={pending}
           className="w-full rounded bg-[#b08d4e] px-4 py-2.5 text-sm font-medium text-brand-navy transition hover:opacity-90 disabled:opacity-50"
         >
-          {pending ? "送出中…" : "Submit"}
+          {pending ? t("submitting") : t("submit")}
         </button>
       </form>
     </section>
