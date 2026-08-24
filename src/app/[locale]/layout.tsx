@@ -52,6 +52,7 @@ export async function generateMetadata({
   const { title, template, description } = SITE_METADATA[locale];
 
   return {
+    metadataBase: new URL(siteUrl),
     title: { default: title, template },
     description,
     alternates: {
