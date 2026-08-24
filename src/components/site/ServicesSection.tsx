@@ -6,7 +6,7 @@ export function ServicesSection({ locale }: { locale: Locale }) {
   const { coreServices, sectionHeaders } = getSiteContent(locale);
 
   return (
-    <section id="services" className="bg-brand-cream">
+    <section id="services" className="scroll-mt-20 bg-brand-cream">
       <div className="mx-auto max-w-6xl px-6 py-20">
         <p className="mb-2 text-xs font-semibold tracking-[0.15em] text-brand-green">
           {sectionHeaders.services.eyebrow}

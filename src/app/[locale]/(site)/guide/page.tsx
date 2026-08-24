@@ -28,7 +28,7 @@ export default async function GuidePage({
 
   return (
     <div className="bg-brand-cream py-16">
-      <div className="mx-auto max-w-3xl px-6">
+      <div className="mx-auto max-w-6xl px-6">
         <p className="mb-2 text-xs font-semibold tracking-[0.15em] text-brand-gold">{eyebrow}</p>
         <h1 className="text-2xl font-bold text-brand-navy md:text-3xl">{title}</h1>
         <p className="mt-4 text-sm text-neutral-600">{intro}</p>

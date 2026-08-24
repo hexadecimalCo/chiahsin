@@ -5,7 +5,7 @@ export function ClientTypesSection({ locale }: { locale: Locale }) {
   const { clientTypes, sectionHeaders } = getSiteContent(locale);
 
   return (
-    <section id="about" className="bg-brand-cream py-20">
+    <section id="about" className="scroll-mt-20 bg-brand-cream py-20">
       <div className="mx-auto max-w-6xl px-6">
         <p className="mb-2 text-xs font-semibold tracking-[0.15em] text-brand-green">
           {sectionHeaders.clientTypes.eyebrow}
