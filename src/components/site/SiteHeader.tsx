@@ -8,7 +8,7 @@ export function SiteHeader() {
   const navItems = [
     { href: "/", label: t("home") },
     { href: "/#services", label: t("services") },
-    { href: "/blog", label: t("guide") },
+    { href: "/guide", label: t("guide") },
     { href: "/#about", label: t("about") },
     { href: "/contact", label: t("contact") },
   ];
