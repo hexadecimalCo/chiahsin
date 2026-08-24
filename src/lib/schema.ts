@@ -40,3 +40,20 @@ export function getOrganizationSchema(locale: Locale, siteUrl: string) {
     sameAs: ["https://www.instagram.com/chiahsinacc/", "https://line.me/ti/p/@753inpeo"],
   };
 }
+
+export function getFaqPageSchema(locale: Locale) {
+  const { faqs } = getSiteContent(locale);
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+}

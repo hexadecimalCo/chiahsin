@@ -3,14 +3,20 @@
 import { useState } from "react";
 import { Link } from "@/i18n/navigation";
 import { getSiteContent } from "@/content/site-content";
+import { getFaqPageSchema } from "@/lib/schema";
 import type { Locale } from "@/i18n/routing";
 
 export function FaqSection({ locale }: { locale: Locale }) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
   const { faqs, sectionHeaders } = getSiteContent(locale);
+  const faqPageSchema = getFaqPageSchema(locale);
 
   return (
     <section className="bg-brand-cream py-20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageSchema) }}
+      />
       <div className="mx-auto max-w-3xl px-6">
         <p className="mb-2 text-xs font-semibold tracking-[0.15em] text-brand-green">
           {sectionHeaders.faq.eyebrow}
