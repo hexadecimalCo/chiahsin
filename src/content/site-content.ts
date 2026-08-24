@@ -19,6 +19,7 @@ type SiteContent = {
     title: string;
     description: string;
     linkLabel: string;
+    href: string;
   }>;
   processSteps: Array<{ number: string; title: string; duration: string }>;
   clientTypes: Array<{ title: string; description: string }>;
@@ -56,6 +57,7 @@ const content: Record<Locale, SiteContent> = {
         description:
           "協助外商／僑外資完成投資審查、經濟部公司設立及資金匯入申報，一站式處理來台設立的所有行政程序。",
         linkLabel: "了解設立流程",
+        href: "/guide",
       },
       {
         number: "02",
@@ -63,6 +65,7 @@ const content: Record<Locale, SiteContent> = {
         description:
           "熟悉外資企業常見的稅務困難，提供營所稅申報、財務簽證、稅務簽證等服務，確保申報合規並降低稅務風險。",
         linkLabel: "了解稅務服務",
+        href: "/contact",
       },
       {
         number: "03",
@@ -70,6 +73,7 @@ const content: Record<Locale, SiteContent> = {
         description:
           "依台灣會計準則建置整理帳務，定期產出財務報表，讓您隨時掌握台灣子公司的營運狀況。",
         linkLabel: "了解帳務服務",
+        href: "/contact",
       },
       {
         number: "04",
@@ -77,6 +81,7 @@ const content: Record<Locale, SiteContent> = {
         description:
           "代辦員工薪資計算、勞健保及退休金提撥，即使是小型辦公室也能符合人事行政要求。",
         linkLabel: "了解薪資服務",
+        href: "/contact",
       },
     ],
     processSteps: [
@@ -174,6 +179,7 @@ const content: Record<Locale, SiteContent> = {
         description:
           "We handle investment review, MOEA company registration and inbound fund declarations — a one-stop solution for setting up in Taiwan.",
         linkLabel: "Learn about the setup process",
+        href: "/guide",
       },
       {
         number: "02",
@@ -181,6 +187,7 @@ const content: Record<Locale, SiteContent> = {
         description:
           "We understand the tax challenges foreign-invested companies face, offering corporate income tax filing and financial/tax certification to keep you compliant and reduce risk.",
         linkLabel: "Learn about tax services",
+        href: "/contact",
       },
       {
         number: "03",
@@ -188,6 +195,7 @@ const content: Record<Locale, SiteContent> = {
         description:
           "Books maintained under Taiwan accounting standards, with regular financial statements so you always know how your Taiwan subsidiary is doing.",
         linkLabel: "Learn about bookkeeping",
+        href: "/contact",
       },
       {
         number: "04",
@@ -195,6 +203,7 @@ const content: Record<Locale, SiteContent> = {
         description:
           "Payroll calculation, labor/health insurance and pension contributions handled for you — even small offices stay compliant.",
         linkLabel: "Learn about payroll services",
+        href: "/contact",
       },
     ],
     processSteps: [
@@ -302,6 +311,7 @@ const content: Record<Locale, SiteContent> = {
         description:
           "投資審査、経済部への会社設立申請、資金送金の申告まで、台湾進出に必要な行政手続きをワンストップでサポートします。",
         linkLabel: "設立フローを見る",
+        href: "/guide",
       },
       {
         number: "02",
@@ -309,6 +319,7 @@ const content: Record<Locale, SiteContent> = {
         description:
           "外資企業特有の税務課題を熟知し、営利事業所得税申告、財務諸表監査、税務証明などのサービスでコンプライアンスとリスク低減を支援します。",
         linkLabel: "税務サービスを見る",
+        href: "/contact",
       },
       {
         number: "03",
@@ -316,6 +327,7 @@ const content: Record<Locale, SiteContent> = {
         description:
           "台湾の会計基準に基づき帳簿を整理し、定期的に財務諸表を作成。台湾子会社の経営状況をいつでも把握できます。",
         linkLabel: "記帳サービスを見る",
+        href: "/contact",
       },
       {
         number: "04",
@@ -323,6 +335,7 @@ const content: Record<Locale, SiteContent> = {
         description:
           "給与計算、労働・健康保険、退職金の手続きを代行。小規模オフィスでも人事労務のコンプライアンスを実現します。",
         linkLabel: "給与サービスを見る",
+        href: "/contact",
       },
     ],
     processSteps: [

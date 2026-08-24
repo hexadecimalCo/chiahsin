@@ -30,7 +30,7 @@ export function ServicesSection({ locale }: { locale: Locale }) {
               <h3 className="mb-2 text-lg font-semibold text-brand-navy">{service.title}</h3>
               <p className="text-sm text-neutral-500">{service.description}</p>
               <Link
-                href="/contact"
+                href={service.href}
                 className="mt-4 inline-block text-sm font-medium text-brand-green hover:underline"
               >
                 {service.linkLabel} →
