@@ -86,9 +86,9 @@ const content: Record<Locale, SiteContent> = {
     ],
     processSteps: [
       { number: "1", title: "公司名稱預查", duration: "約 1-3 個工作天" },
-      { number: "2", title: "投資審議申請", duration: "約 2-4 週" },
-      { number: "3", title: "公司登記", duration: "取得統一編號" },
-      { number: "4", title: "銀行開戶", duration: "協助準備文件" },
+      { number: "2", title: "投資審議申請", duration: "約 6-8 週" },
+      { number: "3", title: "銀行開戶", duration: "協助準備文件" },
+      { number: "4", title: "公司登記", duration: "取得統一編號" },
       { number: "5", title: "稅務登記", duration: "完成首次申報準備" },
     ],
     clientTypes: [
@@ -208,9 +208,9 @@ const content: Record<Locale, SiteContent> = {
     ],
     processSteps: [
       { number: "1", title: "Company Name Reservation", duration: "1–3 business days" },
-      { number: "2", title: "Investment Review Application", duration: "2–4 weeks" },
-      { number: "3", title: "Company Registration", duration: "Obtain business ID number" },
-      { number: "4", title: "Bank Account Opening", duration: "Document preparation support" },
+      { number: "2", title: "Investment Review Application", duration: "6–8 weeks" },
+      { number: "3", title: "Bank Account Opening", duration: "Document preparation support" },
+      { number: "4", title: "Company Registration", duration: "Obtain business ID number" },
       { number: "5", title: "Tax Registration", duration: "First filing preparation complete" },
     ],
     clientTypes: [
@@ -340,9 +340,9 @@ const content: Record<Locale, SiteContent> = {
     ],
     processSteps: [
       { number: "1", title: "会社名称の事前審査", duration: "約1〜3営業日" },
-      { number: "2", title: "投資審議の申請", duration: "約2〜4週間" },
-      { number: "3", title: "会社登記", duration: "統一番号の取得" },
-      { number: "4", title: "銀行口座開設", duration: "書類準備をサポート" },
+      { number: "2", title: "投資審議の申請", duration: "約6〜8週間" },
+      { number: "3", title: "銀行口座開設", duration: "書類準備をサポート" },
+      { number: "4", title: "会社登記", duration: "統一番号の取得" },
       { number: "5", title: "税務登記", duration: "初回申告の準備完了" },
     ],
     clientTypes: [
