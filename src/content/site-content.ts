@@ -93,16 +93,16 @@ const content: Record<Locale, SiteContent> = {
     ],
     clientTypes: [
       {
-        title: "日商在台子公司",
-        description: "熟悉台商進出口法規，提供日文溝通服務，協助日商快速展開台灣業務。",
+        title: "日商來台投資",
+        description: "熟悉日商溝通與作業習慣，提供日文服務，協助企業順利在台設立及營運。",
       },
       {
-        title: "歐美企業台灣分公司",
-        description: "與您慣用的財稅法規對接，協助關鍵財會事項完成分公司或子公司設立。",
+        title: "外國企業來台投資",
+        description: "熟悉台灣公司及財稅法規，協助外國企業順利完成在台設立及營運所需程序。",
       },
       {
-        title: "新創與中小型外資企業",
-        description: "陪伴新創從零開始的註冊到營運，用最實惠的成本完成合規建置。",
+        title: "新創與中小型企業",
+        description: "從設立、記帳到日常財稅需求，以務實且符合成本效益的方式協助企業穩健營運。",
       },
     ],
     faqs: [
@@ -215,19 +215,19 @@ const content: Record<Locale, SiteContent> = {
     ],
     clientTypes: [
       {
-        title: "Japanese Subsidiaries in Taiwan",
+        title: "Japanese Investment in Taiwan",
         description:
-          "Familiar with import/export regulations and fluent in Japanese, we help Japanese companies get up and running in Taiwan quickly.",
+          "Familiar with Japanese communication and working style, with Japanese-language service, to help your company set up and operate smoothly in Taiwan.",
       },
       {
-        title: "European & US Company Branches in Taiwan",
+        title: "Foreign Investment in Taiwan",
         description:
-          "We align with the tax and reporting standards you're used to, handling the key accounting matters for your branch or subsidiary setup.",
+          "Familiar with Taiwan's company and tax regulations, helping foreign companies complete the procedures needed to set up and operate in Taiwan.",
       },
       {
-        title: "Startups & Small Foreign-Invested Companies",
+        title: "Startups & Small-to-Medium Enterprises",
         description:
-          "We support startups from initial registration through operations, keeping compliance costs manageable.",
+          "From setup and bookkeeping to everyday financial and tax needs, we support your business with a practical, cost-effective approach.",
       },
     ],
     faqs: [
@@ -347,19 +347,19 @@ const content: Record<Locale, SiteContent> = {
     ],
     clientTypes: [
       {
-        title: "台湾進出の日系子会社",
+        title: "台湾進出の日系企業",
         description:
-          "台湾の輸出入規制に精通し、日本語でのコミュニケーションに対応。日系企業の台湾展開をスムーズにサポートします。",
+          "日系企業とのコミュニケーションや業務習慣に精通し、日本語でのサービスを通じて、台湾での設立・運営をスムーズにサポートします。",
       },
       {
-        title: "欧米企業の台湾支店・子会社",
+        title: "台湾進出の外資企業",
         description:
-          "貴社に馴染みのある財務・税務基準に合わせ、支店・子会社設立に必要な会計対応を支援します。",
+          "台湾の会社法及び財務・税務関連法規に精通し、外資企業の台湾における設立・運営に必要な手続きをサポートします。",
       },
       {
-        title: "スタートアップ・中小規模の外資企業",
+        title: "スタートアップ・中小企業",
         description:
-          "ゼロからの登記から運営まで伴走し、最小限のコストでコンプライアンス体制を構築します。",
+          "設立、記帳から日々の財務・税務ニーズまで、実務的でコストパフォーマンスに優れた方法で安定した経営をサポートします。",
       },
     ],
     faqs: [
