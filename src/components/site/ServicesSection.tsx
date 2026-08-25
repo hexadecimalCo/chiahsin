@@ -8,7 +8,7 @@ export function ServicesSection({ locale }: { locale: Locale }) {
   return (
     <section id="services" className="scroll-mt-20 bg-brand-cream">
       <div className="mx-auto max-w-6xl px-6 py-20">
-        <p className="mb-2 text-xs font-semibold tracking-[0.15em] text-brand-green">
+        <p className="mb-2 text-xs font-semibold tracking-[0.15em] text-brand-gold">
           {sectionHeaders.services.eyebrow}
         </p>
         <h2 className="text-2xl font-bold text-brand-navy md:text-3xl">
@@ -24,14 +24,14 @@ export function ServicesSection({ locale }: { locale: Locale }) {
               key={service.number}
               className="rounded-lg border border-brand-gray-300 bg-white p-6"
             >
-              <span className="mb-4 inline-flex h-9 w-9 items-center justify-center rounded-full border border-brand-green text-xs font-semibold text-brand-green">
+              <span className="mb-4 inline-flex h-9 w-9 items-center justify-center rounded-full border border-brand-gold text-xs font-semibold text-brand-gold">
                 {service.number}
               </span>
               <h3 className="mb-2 text-lg font-semibold text-brand-navy">{service.title}</h3>
               <p className="text-sm text-neutral-500">{service.description}</p>
               <Link
                 href={service.href}
-                className="mt-4 inline-block text-sm font-medium text-brand-green hover:underline"
+                className="mt-4 inline-block text-sm font-medium text-brand-gold hover:underline"
               >
                 {service.linkLabel} →
               </Link>

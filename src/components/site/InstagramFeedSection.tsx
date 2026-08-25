@@ -12,7 +12,7 @@ export async function InstagramFeedSection() {
     <section className="bg-brand-cream py-16">
       <div className="mx-auto max-w-6xl px-6">
         <div className="mb-8 text-center">
-          <p className="text-xs font-semibold tracking-[0.2em] text-brand-green">
+          <p className="text-xs font-semibold tracking-[0.2em] text-brand-gold">
             INSTAGRAM
           </p>
           <h2 className="mt-2 text-2xl font-bold text-brand-navy md:text-3xl">

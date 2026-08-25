@@ -36,7 +36,7 @@ export default async function GuidePage({
         <ol className="mt-12 space-y-12">
           {steps.map((step) => (
             <li key={step.number} className="relative pl-12">
-              <span className="absolute left-0 top-0 flex h-9 w-9 items-center justify-center rounded-full border border-brand-green text-sm font-semibold text-brand-green">
+              <span className="absolute left-0 top-0 flex h-9 w-9 items-center justify-center rounded-full border border-brand-gold text-sm font-semibold text-brand-gold">
                 {step.number}
               </span>
               <h2 className="pt-1 text-lg font-semibold text-brand-navy">{step.title}</h2>
@@ -53,7 +53,7 @@ export default async function GuidePage({
                             href={block.href}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="font-medium text-brand-green hover:underline"
+                            className="font-medium text-brand-gold hover:underline"
                           >
                             {block.linkText}
                           </a>
@@ -76,7 +76,7 @@ export default async function GuidePage({
                         <ul className="space-y-2">
                           {block.items.map((item) => (
                             <li key={item} className="flex items-start gap-2 text-sm text-neutral-600">
-                              <span className="mt-0.5 text-brand-green" aria-hidden="true">
+                              <span className="mt-0.5 text-brand-gold" aria-hidden="true">
                                 ✓
                               </span>
                               <span>{item}</span>
@@ -95,7 +95,7 @@ export default async function GuidePage({
                           href={block.href}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="mt-2 inline-block text-sm font-medium text-brand-green hover:underline"
+                          className="mt-2 inline-block text-sm font-medium text-brand-gold hover:underline"
                         >
                           {block.linkLabel} →
                         </a>

@@ -18,7 +18,7 @@ export function FaqSection({ locale }: { locale: Locale }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageSchema) }}
       />
       <div className="mx-auto max-w-3xl px-6">
-        <p className="mb-2 text-xs font-semibold tracking-[0.15em] text-brand-green">
+        <p className="mb-2 text-xs font-semibold tracking-[0.15em] text-brand-gold">
           {sectionHeaders.faq.eyebrow}
         </p>
         <h2 className="mb-10 text-2xl font-bold text-brand-navy md:text-3xl">
@@ -46,7 +46,7 @@ export function FaqSection({ locale }: { locale: Locale }) {
 
         <div className="mt-10 flex flex-wrap items-center justify-between gap-4 rounded-lg border border-dashed border-brand-gray-300 bg-white p-6">
           <p className="max-w-xl text-sm text-neutral-500">{sectionHeaders.faq.note}</p>
-          <Link href="/blog" className="text-sm font-medium text-brand-green hover:underline">
+          <Link href="/blog" className="text-sm font-medium text-brand-gold hover:underline">
             {sectionHeaders.faq.cta} →
           </Link>
         </div>

@@ -6,7 +6,7 @@ export function HeroSection({ locale }: { locale: Locale }) {
   const { heroContent } = getSiteContent(locale);
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b bg-[#1d2c42]">
+    <section className="relative overflow-hidden bg-brand-navy">
       <div className="pointer-events-none absolute inset-0 z-0" aria-hidden>
         <div className="absolute -right-36 -top-24 h-[420px] w-[420px] rounded-full border border-white/10" />
         <div className="absolute -right-10 top-16 h-[280px] w-[280px] rounded-full border border-white/20" />

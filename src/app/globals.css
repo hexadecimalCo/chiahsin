@@ -4,19 +4,17 @@
   --background: #ffffff;
   --foreground: #1c2333;
 
-  /* Brand palette: navy + gold, per approved homepage design */
-  --brand-navy: #16213e;
-  --brand-navy-2: #1f2d4f;
-  --brand-navy-hover: #2a3a5f;
+  /* Brand palette: extracted from official logo asset (白/米杏/深棕炭 + 金 accent) */
+  --brand-navy: #3d3935;
+  --brand-navy-2: #4a443f;
+  --brand-navy-hover: #55504a;
   --brand-gold: #c9a227;
   --brand-gold-hover: #b3901f;
-  --brand-mint: #e6f0e8;
-  --brand-green: #35845f;
-  --brand-cream: #f7f5ee;
-  --brand-gray-100: #f5f6f8;
-  --brand-gray-200: #eef0f3;
-  --brand-gray-300: #e0e3e8;
-  --brand-gray-400: #cfd3da;
+  --brand-cream: #d8cfc5;
+  --brand-gray-100: #f5f3f0;
+  --brand-gray-200: #ebe7e1;
+  --brand-gray-300: #ddd6cd;
+  --brand-gray-400: #c4bbae;
 }
 
 @theme inline {
@@ -27,8 +25,6 @@
   --color-brand-navy-hover: var(--brand-navy-hover);
   --color-brand-gold: var(--brand-gold);
   --color-brand-gold-hover: var(--brand-gold-hover);
-  --color-brand-mint: var(--brand-mint);
-  --color-brand-green: var(--brand-green);
   --color-brand-cream: var(--brand-cream);
   --color-brand-gray-100: var(--brand-gray-100);
   --color-brand-gray-200: var(--brand-gray-200);
