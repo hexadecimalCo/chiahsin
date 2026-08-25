@@ -14,13 +14,13 @@ export function SiteHeader() {
   ];
 
   return (
-    <header className="sticky top-0 z-40 bg-brand-navy">
+    <header className="sticky top-0 z-40 border-b border-brand-gray-300 bg-white">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <Link href="/" className="text-base font-semibold tracking-wide text-white">
+        <Link href="/" className="text-base font-semibold tracking-wide text-brand-navy">
           佾廷<span className="text-brand-gold">會計師事務所</span>
         </Link>
         <div className="flex items-center gap-7">
-          <nav className="hidden gap-7 text-sm text-white/80 md:flex">
+          <nav className="hidden gap-7 text-sm text-brand-navy/80 md:flex">
             {navItems.map((item) => (
               <Link
                 key={item.href}

@@ -14,13 +14,13 @@ export function SiteFooter() {
   ];
 
   return (
-    <footer className="bg-brand-navy py-12">
+    <footer className="bg-brand-cream py-12">
       <div className="mx-auto max-w-6xl px-6 text-center">
         <div className="flex flex-wrap items-start justify-center gap-x-12 gap-y-6">
           {items.map((item) => (
             <div key={item.label}>
-              <p className="text-sm font-semibold text-white">{item.label}</p>
-              <p className="mt-1 text-sm text-white/70">{item.value}</p>
+              <p className="text-sm font-semibold text-brand-navy">{item.label}</p>
+              <p className="mt-1 text-sm text-brand-navy/70">{item.value}</p>
             </div>
           ))}
         </div>
@@ -36,7 +36,7 @@ export function SiteFooter() {
             </a>
           </p>
         )}
-        <p className="mt-8 text-xs text-white/40">
+        <p className="mt-8 text-xs text-brand-navy/50">
           © {new Date().getFullYear()} {siteInfo.firmName}. {t("rights")}
         </p>
       </div>

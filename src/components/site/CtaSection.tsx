@@ -6,10 +6,10 @@ export function CtaSection({ locale }: { locale: Locale }) {
   const { sectionHeaders } = getSiteContent(locale);
 
   return (
-    <section className="bg-brand-navy-2 py-16">
+    <section className="bg-brand-cream py-16">
       <div className="mx-auto max-w-3xl px-6 text-center">
-        <h2 className="text-2xl font-bold text-white md:text-3xl">{sectionHeaders.cta.title}</h2>
-        <p className="mx-auto mt-4 max-w-xl text-sm text-white/70">
+        <h2 className="text-2xl font-bold text-brand-navy md:text-3xl">{sectionHeaders.cta.title}</h2>
+        <p className="mx-auto mt-4 max-w-xl text-sm text-brand-navy/70">
           {sectionHeaders.cta.subtitle}
         </p>
         <Link

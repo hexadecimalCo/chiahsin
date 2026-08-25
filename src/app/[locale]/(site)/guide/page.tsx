@@ -27,7 +27,7 @@ export default async function GuidePage({
   const { eyebrow, title, intro, steps } = getGuideContent(locale);
 
   return (
-    <div className="bg-brand-cream py-16">
+    <div className="bg-white py-16">
       <div className="mx-auto max-w-6xl px-6">
         <p className="mb-2 text-xs font-semibold tracking-[0.15em] text-brand-gold">{eyebrow}</p>
         <h1 className="text-2xl font-bold text-brand-navy md:text-3xl">{title}</h1>
@@ -71,7 +71,7 @@ export default async function GuidePage({
 
                   if (block.type === "checklist") {
                     return (
-                      <div key={i} className="rounded-lg border border-brand-gray-300 bg-white p-5">
+                      <div key={i} className="rounded-lg border border-brand-gray-300 bg-brand-cream p-5">
                         <p className="mb-3 text-sm font-semibold text-brand-navy">{block.title}</p>
                         <ul className="space-y-2">
                           {block.items.map((item) => (

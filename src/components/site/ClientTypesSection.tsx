@@ -5,7 +5,7 @@ export function ClientTypesSection({ locale }: { locale: Locale }) {
   const { clientTypes, sectionHeaders } = getSiteContent(locale);
 
   return (
-    <section id="about" className="scroll-mt-20 bg-brand-cream py-20">
+    <section id="about" className="scroll-mt-20 bg-white py-20">
       <div className="mx-auto max-w-6xl px-6">
         <p className="mb-2 text-xs font-semibold tracking-[0.15em] text-brand-gold">
           {sectionHeaders.clientTypes.eyebrow}
@@ -16,7 +16,7 @@ export function ClientTypesSection({ locale }: { locale: Locale }) {
 
         <div className="mt-10 space-y-5">
           {clientTypes.map((client) => (
-            <div key={client.title} className="rounded-lg bg-white p-6">
+            <div key={client.title} className="rounded-lg bg-brand-cream p-6">
               <h3 className="mb-2 font-semibold text-brand-navy">{client.title}</h3>
               <p className="text-sm text-neutral-600">{client.description}</p>
             </div>

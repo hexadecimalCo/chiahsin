@@ -9,7 +9,7 @@ export async function InstagramFeedSection() {
   if (posts.length === 0) return null;
 
   return (
-    <section className="bg-brand-cream py-16">
+    <section className="bg-white py-16">
       <div className="mx-auto max-w-6xl px-6">
         <div className="mb-8 text-center">
           <p className="text-xs font-semibold tracking-[0.2em] text-brand-gold">

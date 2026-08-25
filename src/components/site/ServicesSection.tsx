@@ -6,7 +6,7 @@ export function ServicesSection({ locale }: { locale: Locale }) {
   const { coreServices, sectionHeaders } = getSiteContent(locale);
 
   return (
-    <section id="services" className="scroll-mt-20 bg-brand-cream">
+    <section id="services" className="scroll-mt-20 bg-white">
       <div className="mx-auto max-w-6xl px-6 py-20">
         <p className="mb-2 text-xs font-semibold tracking-[0.15em] text-brand-gold">
           {sectionHeaders.services.eyebrow}
@@ -22,7 +22,7 @@ export function ServicesSection({ locale }: { locale: Locale }) {
           {coreServices.map((service) => (
             <div
               key={service.number}
-              className="rounded-lg border border-brand-gray-300 bg-white p-6"
+              className="rounded-lg border border-brand-gray-300 bg-brand-cream p-6"
             >
               <span className="mb-4 inline-flex h-9 w-9 items-center justify-center rounded-full border border-brand-gold text-xs font-semibold text-brand-gold">
                 {service.number}

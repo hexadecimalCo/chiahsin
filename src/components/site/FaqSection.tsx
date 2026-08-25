@@ -12,7 +12,7 @@ export function FaqSection({ locale }: { locale: Locale }) {
   const faqPageSchema = getFaqPageSchema(locale);
 
   return (
-    <section className="bg-brand-cream py-20">
+    <section className="bg-white py-20">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageSchema) }}
@@ -44,7 +44,7 @@ export function FaqSection({ locale }: { locale: Locale }) {
           })}
         </div>
 
-        <div className="mt-10 flex flex-wrap items-center justify-between gap-4 rounded-lg border border-dashed border-brand-gray-300 bg-white p-6">
+        <div className="mt-10 flex flex-wrap items-center justify-between gap-4 rounded-lg border border-dashed border-brand-gray-300 bg-brand-cream p-6">
           <p className="max-w-xl text-sm text-neutral-500">{sectionHeaders.faq.note}</p>
           <Link href="/blog" className="text-sm font-medium text-brand-gold hover:underline">
             {sectionHeaders.faq.cta} →

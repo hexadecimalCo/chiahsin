@@ -33,7 +33,7 @@ export function LanguageSwitcher() {
         onClick={() => setOpen((prev) => !prev)}
         aria-haspopup="listbox"
         aria-expanded={open}
-        className="flex items-center gap-1 rounded border border-white/20 px-3 py-1.5 text-white/80 transition hover:border-white/40 hover:text-white"
+        className="flex items-center gap-1 rounded border border-brand-gray-300 px-3 py-1.5 text-brand-navy/70 transition hover:border-brand-gray-400 hover:text-brand-navy"
       >
         {t(locale)}
         <svg
