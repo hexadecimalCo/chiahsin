@@ -44,6 +44,24 @@ export default async function GuidePage({
               <div className="mt-4 space-y-4">
                 {step.blocks.map((block, i) => {
                   if (block.type === "paragraph") {
+                    if (block.linkText && block.href) {
+                      const [before, after] = block.text.split(block.linkText);
+                      return (
+                        <p key={i} className="text-sm leading-relaxed text-neutral-600">
+                          {before}
+                          <a
+                            href={block.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="font-medium text-brand-green hover:underline"
+                          >
+                            {block.linkText}
+                          </a>
+                          {after}
+                        </p>
+                      );
+                    }
+
                     return (
                       <p key={i} className="text-sm leading-relaxed text-neutral-600">
                         {block.text}

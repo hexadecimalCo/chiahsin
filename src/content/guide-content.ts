@@ -5,7 +5,7 @@
 import type { Locale } from "@/i18n/routing";
 
 type GuideBlock =
-  | { type: "paragraph"; text: string }
+  | { type: "paragraph"; text: string; linkText?: string; href?: string }
   | { type: "checklist"; title: string; items: string[] }
   | { type: "note"; text: string; linkLabel?: string; href?: string };
 
@@ -78,6 +78,8 @@ const content: Record<Locale, GuideContent> = {
           {
             type: "paragraph",
             text: "另外，若公司預計登記在台北，也必須先行「營業場所預先審查」確認營業項目是否符合台北市都市計畫法及土地使用分區規定。",
+            linkText: "營業場所預先審查",
+            href: "https://www.businesslocationinfo.gov.taipei/BLBQS/",
           },
           {
             type: "paragraph",
@@ -196,6 +198,8 @@ const content: Record<Locale, GuideContent> = {
           {
             type: "paragraph",
             text: "Additionally, if the company plans to register in Taipei City, a \"Business Location Pre-Review\" is required to confirm the business items comply with Taipei City's urban planning and zoning regulations.",
+            linkText: "Business Location Pre-Review",
+            href: "https://www.businesslocationinfo.gov.taipei/BLBQS/",
           },
           {
             type: "paragraph",
@@ -316,6 +320,8 @@ const content: Record<Locale, GuideContent> = {
           {
             type: "paragraph",
             text: "また、会社を台北市に登記する予定の場合は、「営業場所事前審査」を先に行い、営業項目が台北市都市計画法及び土地利用区分規定に適合しているかを確認する必要があります。",
+            linkText: "営業場所事前審査",
+            href: "https://www.businesslocationinfo.gov.taipei/BLBQS/",
           },
           {
             type: "paragraph",
