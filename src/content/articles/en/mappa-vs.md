@@ -1,5 +1,6 @@
 ---
 title: "Why Did MAPPA Self-Finance the Chainsaw Man Anime? Solo Company vs. Multi-Partner Company"
+category: "foreign-investment"
 excerpt: "Chainsaw Man's anime was self-financed by MAPPA instead of going through a traditional production committee — a jumping-off point to talk about solo vs. multi-investor company structures when starting a business."
 coverImageUrl: "/uploads/mappa-vs/chainsaw-man.jpeg"
 publishedAt: "2022-11-04"

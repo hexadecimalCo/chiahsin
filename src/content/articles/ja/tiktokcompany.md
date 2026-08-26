@@ -1,5 +1,6 @@
 ---
 title: "TikTok台湾子会社？ニュースから見る会社設立の注意点"
+category: "foreign-investment"
 excerpt: "TikTokがひそかに台湾進出？ある会社の名称変更のニュースを題材に、会社設立時に確認すべき「社名」「資本・株主」「登記住所」の3つのポイントを解説します。"
 publishedAt: "2022-12-20"
 ---

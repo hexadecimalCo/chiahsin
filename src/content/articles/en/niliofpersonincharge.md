@@ -1,5 +1,6 @@
 ---
 title: "Labor & Health Insurance for Company Responsible Persons"
+category: "tax-basics"
 excerpt: "How should a company's responsible person (representative) handle labor/health insurance when there are no employees, salary amounts, back-payment demands, or minimum wage rules?"
 publishedAt: "2023-09-19"
 ---

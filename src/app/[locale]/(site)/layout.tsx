@@ -1,6 +1,7 @@
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { LineFloatingButton } from "@/components/site/LineFloatingButton";
+import { ScrollToTopOnNavigate } from "@/components/site/ScrollToTopOnNavigate";
 import { getOrganizationSchema } from "@/lib/schema";
 import type { Locale } from "@/i18n/routing";
 
@@ -21,6 +22,7 @@ export default async function SiteLayout({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
       />
+      <ScrollToTopOnNavigate />
       <SiteHeader />
       <main className="flex-1">{children}</main>
       <SiteFooter />

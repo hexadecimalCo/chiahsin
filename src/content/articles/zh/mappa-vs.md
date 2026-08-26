@@ -1,5 +1,6 @@
 ---
 title: "MAPPA「鏈鋸人」動畫製作公司為什麼獨立出資? 一人公司VS多人公司"
+category: "foreign-investment"
 excerpt: "從鏈鋸人動畫由 MAPPA 獨立出資、沒有走製作委員會模式的決策，聊聊創業時一人公司與多人共同出資的差異。"
 coverImageUrl: "/uploads/mappa-vs/chainsaw-man.jpeg"
 publishedAt: "2022-11-04"

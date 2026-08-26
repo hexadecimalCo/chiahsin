@@ -1,5 +1,6 @@
 ---
 title: "房子裝潢，要不要拿發票? 現在拿發票，未來至少節稅15%!"
+category: "tax-basics"
 excerpt: "房地合一2.0上路後，裝潢費用能否列入取得成本，關鍵在於當初有沒有依規定索取發票。"
 coverImageUrl: "/uploads/decorationcost/land-tax-2.jpeg"
 publishedAt: "2022-09-29"

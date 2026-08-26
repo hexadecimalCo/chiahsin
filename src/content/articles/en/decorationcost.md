@@ -1,5 +1,6 @@
 ---
 title: "Renovating Your Home? Get the Invoice — It Could Save You at Least 15% in Tax Later"
+category: "tax-basics"
 excerpt: "After the House and Land Transactions Income Tax 2.0 rules took effect, whether your renovation costs count toward your acquisition cost hinges on one thing: did you get an official invoice at the time?"
 coverImageUrl: "/uploads/decorationcost/land-tax-2.jpeg"
 publishedAt: "2022-09-29"

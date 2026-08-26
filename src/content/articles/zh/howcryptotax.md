@@ -1,5 +1,6 @@
 ---
 title: "塊陶阿！FTX出金了，然後呢?加密貨幣在台灣怎麼課稅?"
+category: "tax-basics"
 excerpt: "FTX事件後，境內外交易所的加密貨幣所得該怎麼認定與課稅？整理財產交易所得與海外所得兩種計算方式。"
 coverImageUrl: "/uploads/howcryptotax/overseas-income.png"
 publishedAt: "2022-11-23"

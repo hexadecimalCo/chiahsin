@@ -1,5 +1,6 @@
 ---
 title: "嘉欣會計師事務所與日商緣梨資本股份有限公司達成台日跨國M&A合作"
+category: "firm-announcement"
 excerpt: "攜手共創，拓展台日跨國併購新里程：嘉欣會計師事務所與日本緣梨資本正式締結合作夥伴關係，共同開展跨國併購業務。"
 coverImageUrl: "/uploads/workwithpearcapital/announcement.png"
 publishedAt: "2024-09-13"

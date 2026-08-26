@@ -1,5 +1,6 @@
 ---
 title: "Applying to Establish a Renewable Energy Generation Business"
+category: "renewable-energy"
 excerpt: "Under the Electricity Act and the Renewable Energy Equipment Regulations, we explain the three types of renewable energy equipment and the application process for Type 1 and Type 3."
 coverImageUrl: "/uploads/renewable-energy-application/types.png"
 publishedAt: "2022-09-05"

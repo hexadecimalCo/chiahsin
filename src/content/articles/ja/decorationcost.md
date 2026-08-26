@@ -1,5 +1,6 @@
 ---
 title: "住宅のリフォーム、領収書はもらっていますか？今もらっておけば将来最低15%の節税に！"
+category: "tax-basics"
 excerpt: "不動産統合譲渡所得税2.0導入後、リフォーム費用を取得原価に算入できるかどうかは、当時きちんと正式な領収書をもらっていたかどうかにかかっています。"
 coverImageUrl: "/uploads/decorationcost/land-tax-2.jpeg"
 publishedAt: "2022-09-29"

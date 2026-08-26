@@ -6,6 +6,10 @@
     "about": "私たちについて",
     "contact": "お問い合わせ"
   },
+  "mobileMenu": {
+    "open": "メニューを開く",
+    "close": "メニューを閉じる"
+  },
   "footer": {
     "phone": "電話",
     "email": "Email",
@@ -19,7 +23,18 @@
   },
   "blog": {
     "title": "コラム",
-    "empty": "まだ記事はありません"
+    "empty": "まだ記事はありません",
+    "categories": {
+      "all": "すべて",
+      "foreign-investment": "会社設立",
+      "renewable-energy": "再生可能エネルギー",
+      "tax-basics": "税務基礎知識",
+      "firm-announcement": "事務所からのお知らせ"
+    },
+    "prevArticle": "前の記事",
+    "nextArticle": "次の記事",
+    "ctaText": "記事の内容や貴社の状況についてご質問がございましたら、お気軽にお問い合わせください。",
+    "ctaLabel": "無料相談を予約する"
   },
   "search": {
     "title": "検索",
@@ -29,11 +44,28 @@
   },
   "contactForm": {
     "title": "お問い合わせ",
+    "intro": "貴社の状況とご相談されたいサービスをお知らせください。1営業日以内にご返信いたします。",
+    "company": "会社名",
+    "region": "貴社の所在国・地域",
+    "service": "ご相談されたいサービス",
+    "serviceOptions": [
+      "会社設立及び僑外資登記",
+      "税務登記・申告",
+      "記帳代行",
+      "給与計算アウトソーシング",
+      "所得税法 §25 租税優遇の申請",
+      "その他"
+    ],
     "name": "お名前",
     "email": "Email",
     "message": "メッセージ",
     "submit": "送信",
-    "submitting": "送信中…"
+    "submitting": "送信中…",
+    "consent": "送信をもって、ご提供いただいた情報を本お問い合わせへの返信以外の目的には使用しないことに同意したものとみなします。",
+    "officeInfoTitle": "事務所情報",
+    "addressLabel": "住所",
+    "hoursLabel": "営業時間",
+    "languagesLabel": "対応言語"
   },
   "notFound": {
     "title": "ページが見つかりません",
@@ -42,5 +74,11 @@
   },
   "lineButton": {
     "label": "LINEで友だち追加"
+  },
+  "instagram": {
+    "eyebrow": "INSTAGRAM",
+    "cta": "Instagramへ",
+    "fallbackDescription": "外資設立、税務、再生可能エネルギーの実務ノートを毎週発信しています。",
+    "altFallback": "Instagramの投稿"
   }
 }

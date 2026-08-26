@@ -1,5 +1,6 @@
 ---
 title: "MAPPAはなぜ「チェンソーマン」を独自出資したのか？一人会社 vs 複数人会社"
+category: "foreign-investment"
 excerpt: "チェンソーマンのアニメが製作委員会方式ではなくMAPPAの独自出資で作られたことをきっかけに、起業時の一人会社と複数人共同出資の違いについて考えてみます。"
 coverImageUrl: "/uploads/mappa-vs/chainsaw-man.jpeg"
 publishedAt: "2022-11-04"

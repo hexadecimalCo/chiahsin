@@ -1,5 +1,6 @@
 ---
 title: "嘉欣会計士事務所、日本のペアキャピタルと台日クロスボーダーM&Aで提携"
+category: "firm-announcement"
 excerpt: "嘉欣会計士事務所は日本の株式会社ペアキャピタルと正式に提携し、台湾・日本間のクロスボーダーM&A事業を共同展開します。"
 coverImageUrl: "/uploads/workwithpearcapital/announcement.png"
 publishedAt: "2024-09-13"

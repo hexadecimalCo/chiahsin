@@ -1,5 +1,6 @@
 ---
 title: "How Dividends Affect Income Tax and the Second-Generation NHI Supplementary Premium"
+category: "tax-basics"
 excerpt: "Should dividend income be taxed combined or separately? Two income tax calculation methods, plus how to calculate the related NHI supplementary premium, with a worked example."
 publishedAt: "2023-10-04"
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Is Your Company Calculating Employee Payroll Correctly?"
+category: "tax-basics"
 excerpt: "Dispatched workers, part-time employees, payroll calculation FAQs — covering part-time labor insurance brackets, monthly salary calculation, and special leave rules."
 publishedAt: "2023-10-25"
 ---

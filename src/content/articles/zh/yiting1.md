@@ -1,5 +1,6 @@
 ---
 title: "事務所名稱更改公告：歡迎來到佾廷會計師事務所！"
+category: "firm-announcement"
 excerpt: "事務所已正式更名為佾廷會計師事務所，既有合約效力不受影響。"
 publishedAt: "2024-11-27"
 ---

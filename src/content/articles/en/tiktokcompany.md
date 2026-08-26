@@ -1,5 +1,6 @@
 ---
 title: "A TikTok Taiwan Subsidiary? What the News Tells Us About Company Formation"
+category: "foreign-investment"
 excerpt: "Did TikTok quietly set up shop in Taiwan? Using a recent news story about a company name change, we discuss the three things you must nail down when forming a company: name, capital/shareholders, and registered address."
 publishedAt: "2022-12-20"
 ---

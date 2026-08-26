@@ -1,5 +1,6 @@
 ---
 title: "FTX Users Got Their Funds Out — Now What? How Is Crypto Taxed in Taiwan?"
+category: "tax-basics"
 excerpt: "After the FTX collapse, how should income from domestic vs. offshore crypto exchanges be recognized and taxed? Covers property transaction income and offshore income calculation methods."
 publishedAt: "2022-11-23"
 ---

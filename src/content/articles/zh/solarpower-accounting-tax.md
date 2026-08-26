@@ -1,5 +1,6 @@
 ---
 title: "淺談太陽能產業之會計、稅務"
+category: "renewable-energy"
 excerpt: "太陽能產業鏈中，工程統包商與能源服務商在收入認列、資產折舊與稅務申報上有哪些差異與注意事項？"
 coverImageUrl: "/uploads/solarpower-accounting-tax/chain.png"
 publishedAt: "2021-06-04"

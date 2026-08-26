@@ -1,5 +1,6 @@
 ---
 title: "(Press Release) Activating the Green Power Market: Type 2/3 Renewable Self-Generation Equipment Now Allowed to Sell to Renewable Energy Retailers"
+category: "renewable-energy"
 excerpt: "Reposted from a Bureau of Energy press release: Type 2/3 solar self-generation equipment can now sell power to renewable energy retailers without converting to a Type 1 utility."
 publishedAt: "2024-01-08"
 ---

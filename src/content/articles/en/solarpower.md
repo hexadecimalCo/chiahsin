@@ -1,5 +1,6 @@
 ---
 title: "A Comprehensive Look at Type 1 and Type 3 Solar Power Plants"
+category: "renewable-energy"
 excerpt: "The development and outlook for small-scale solar power plants: how Type 1 and Type 3 are defined, the differences in who they can sell power to, and the challenges small plants face converting to Type 1."
 coverImageUrl: "/uploads/solarpower/fig0.png"
 publishedAt: "2023-12-28"

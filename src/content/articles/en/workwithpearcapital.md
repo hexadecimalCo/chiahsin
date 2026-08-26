@@ -1,5 +1,6 @@
 ---
 title: "Yi Ting Accounting Firm Partners with Pear Capital (Japan) on Cross-Border Taiwan–Japan M&A"
+category: "firm-announcement"
 excerpt: "Yi Ting Accounting Firm has formed a partnership with Japan's Pear Capital to jointly offer cross-border M&A services between Taiwan and Japan."
 coverImageUrl: "/uploads/workwithpearcapital/announcement.png"
 publishedAt: "2024-09-13"

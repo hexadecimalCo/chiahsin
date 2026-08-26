@@ -1,5 +1,6 @@
 ---
 title: "太陽能售電，要用個人名義好？還是成立公司行號呢？SPV是什麼?"
+category: "renewable-energy"
 excerpt: "太陽能售電依售電人身分不同，營業登記、統一發票及所得稅申報方式也不同，並簡介 SPV（特殊目的公司）在太陽能產業的應用。"
 coverImageUrl: "/uploads/spv/seller-comparison.jpeg"
 publishedAt: "2022-09-08"

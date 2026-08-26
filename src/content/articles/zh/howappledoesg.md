@@ -1,5 +1,6 @@
 ---
 title: "Apple 公司的環保措施：從會計師的角度看"
+category: "tax-basics"
 excerpt: "從會計師的角度，看 Apple 公司如何依溫室氣體盤查議定書（GHG Protocol）的範疇一、二、三，落實供應鏈減碳。"
 publishedAt: "2023-09-22"
 ---

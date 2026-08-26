@@ -6,6 +6,10 @@
     "about": "關於我們",
     "contact": "聯絡我們"
   },
+  "mobileMenu": {
+    "open": "開啟選單",
+    "close": "關閉選單"
+  },
   "footer": {
     "phone": "電話",
     "email": "Email",
@@ -19,7 +23,18 @@
   },
   "blog": {
     "title": "文章專欄",
-    "empty": "目前還沒有文章"
+    "empty": "目前還沒有文章",
+    "categories": {
+      "all": "全部",
+      "foreign-investment": "外商設立",
+      "renewable-energy": "再生能源",
+      "tax-basics": "稅務常識",
+      "firm-announcement": "事務所公告"
+    },
+    "prevArticle": "上一篇",
+    "nextArticle": "下一篇",
+    "ctaText": "對文章內容或您公司的狀況有疑問？歡迎直接與我們聯繫。",
+    "ctaLabel": "預約諮詢"
   },
   "search": {
     "title": "搜尋",
@@ -29,11 +44,28 @@
   },
   "contactForm": {
     "title": "聯絡我們",
+    "intro": "請留下貴公司狀況與想諮詢的服務，我們會在 1 個工作日內回覆。",
+    "company": "公司名稱",
+    "region": "公司所在國家／地區",
+    "service": "想諮詢的服務",
+    "serviceOptions": [
+      "公司設立及僑外資登記",
+      "稅務登記與申報",
+      "帳務處理",
+      "薪資外包",
+      "所得稅法 §25 租稅優惠申請",
+      "其他"
+    ],
     "name": "姓名",
     "email": "Email",
     "message": "訊息",
     "submit": "送出",
-    "submitting": "送出中…"
+    "submitting": "送出中…",
+    "consent": "送出後表示同意本所僅將您提供的資訊用於回覆本次諮詢，不作其他用途。",
+    "officeInfoTitle": "事務所資訊",
+    "addressLabel": "地址",
+    "hoursLabel": "服務時間",
+    "languagesLabel": "服務語言"
   },
   "notFound": {
     "title": "找不到這個頁面",
@@ -42,5 +74,11 @@
   },
   "lineButton": {
     "label": "加入 LINE 好友"
+  },
+  "instagram": {
+    "eyebrow": "INSTAGRAM",
+    "cta": "前往 Instagram",
+    "fallbackDescription": "每週分享外商設立、稅務與再生能源的實務筆記。",
+    "altFallback": "Instagram 貼文"
   }
 }

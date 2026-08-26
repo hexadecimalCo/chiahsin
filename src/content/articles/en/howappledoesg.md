@@ -1,5 +1,6 @@
 ---
 title: "Apple's Environmental Measures: An Accountant's Perspective"
+category: "tax-basics"
 excerpt: "An accountant's perspective on how Apple addresses Scope 1, 2 and 3 emissions under the GHG Protocol across its supply chain."
 publishedAt: "2023-09-22"
 ---

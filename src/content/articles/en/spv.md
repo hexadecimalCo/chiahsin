@@ -1,5 +1,6 @@
 ---
 title: "Selling Solar Power: Better as an Individual or Through a Company? What Is an SPV?"
+category: "renewable-energy"
 excerpt: "How solar power sales are taxed and registered differs depending on the seller's status — individual vs. company — plus an introduction to the SPV (Special Purpose Vehicle) model common in the solar industry."
 publishedAt: "2022-09-08"
 ---

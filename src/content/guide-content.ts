@@ -12,6 +12,8 @@ type GuideBlock =
 type GuideStep = {
   number: string;
   title: string;
+  shortTitle: string;
+  duration: string;
   blocks: GuideBlock[];
 };
 
@@ -20,6 +22,7 @@ type GuideContent = {
   title: string;
   intro: string;
   steps: GuideStep[];
+  closingCta: { text: string; label: string; href: string };
 };
 
 const content: Record<Locale, GuideContent> = {
@@ -31,6 +34,8 @@ const content: Record<Locale, GuideContent> = {
       {
         number: "1",
         title: "公司名稱及營業項目預查",
+        shortTitle: "公司名稱及營業項目預查",
+        duration: "約 1-3 個工作天",
         blocks: [
           {
             type: "paragraph",
@@ -52,6 +57,8 @@ const content: Record<Locale, GuideContent> = {
       {
         number: "2",
         title: "投資許可、開立銀行籌備戶及資金審定",
+        shortTitle: "投資許可、籌備戶及資金審定",
+        duration: "約 6-8 週",
         blocks: [
           {
             type: "paragraph",
@@ -99,6 +106,8 @@ const content: Record<Locale, GuideContent> = {
       {
         number: "3",
         title: "公司設立登記、稅籍登記及銀行轉成正式戶",
+        shortTitle: "公司登記、稅籍登記及轉正式戶",
+        duration: "取得統一編號後辦理",
         blocks: [
           {
             type: "paragraph",
@@ -138,6 +147,11 @@ const content: Record<Locale, GuideContent> = {
         ],
       },
     ],
+    closingCta: {
+      text: "文件看起來很多，但多數可由本所代為準備。先談談您的產業與時程，我們會列出您這個案子實際需要的清單。",
+      label: "預約諮詢",
+      href: "/contact",
+    },
   },
 
   en: {
@@ -148,6 +162,8 @@ const content: Record<Locale, GuideContent> = {
       {
         number: "1",
         title: "Company Name & Business Item Pre-Check",
+        shortTitle: "Company Name & Business Item Pre-Check",
+        duration: "1–3 business days",
         blocks: [
           {
             type: "paragraph",
@@ -172,6 +188,8 @@ const content: Record<Locale, GuideContent> = {
       {
         number: "2",
         title: "Investment Approval, Preparatory Bank Account & Fund Verification",
+        shortTitle: "Investment Approval, Account & Fund Verification",
+        duration: "6–8 weeks",
         blocks: [
           {
             type: "paragraph",
@@ -224,6 +242,8 @@ const content: Record<Locale, GuideContent> = {
       {
         number: "3",
         title: "Company Registration, Tax Registration & Converting to a Regular Bank Account",
+        shortTitle: "Company & Tax Registration, Account Conversion",
+        duration: "After obtaining the business ID number",
         blocks: [
           {
             type: "paragraph",
@@ -263,6 +283,11 @@ const content: Record<Locale, GuideContent> = {
         ],
       },
     ],
+    closingCta: {
+      text: "The documents may look like a lot, but we can prepare most of them for you. Tell us about your industry and timeline, and we'll put together the exact checklist your case needs.",
+      label: "Book a Consultation",
+      href: "/contact",
+    },
   },
 
   ja: {
@@ -273,6 +298,8 @@ const content: Record<Locale, GuideContent> = {
       {
         number: "1",
         title: "会社名称及び営業項目の事前審査",
+        shortTitle: "会社名称及び営業項目の事前審査",
+        duration: "約1〜3営業日",
         blocks: [
           {
             type: "paragraph",
@@ -294,6 +321,8 @@ const content: Record<Locale, GuideContent> = {
       {
         number: "2",
         title: "投資許可、銀行準備口座の開設及び資金審定",
+        shortTitle: "投資許可、準備口座及び資金審定",
+        duration: "約6〜8週間",
         blocks: [
           {
             type: "paragraph",
@@ -346,6 +375,8 @@ const content: Record<Locale, GuideContent> = {
       {
         number: "3",
         title: "会社設立登記、税籍登記及び銀行口座の正式口座への切り替え",
+        shortTitle: "会社登記、税籍登記及び正式口座への切替",
+        duration: "統一番号取得後に手続き",
         blocks: [
           {
             type: "paragraph",
@@ -385,6 +416,11 @@ const content: Record<Locale, GuideContent> = {
         ],
       },
     ],
+    closingCta: {
+      text: "書類が多く見えるかもしれませんが、その多くは当事務所が代わりにご用意できます。まずは貴社の業種とスケジュールをお聞かせください。実際に必要な書類リストをご案内します。",
+      label: "無料相談を予約する",
+      href: "/contact",
+    },
   },
 };
 

@@ -1,5 +1,6 @@
 ---
 title: "ネット販売事業者のチェックリスト！"
+category: "tax-basics"
 excerpt: "2023年より税籍登記の新制度が施行。ネット販売のドメイン名やプラットフォームの会員アカウントも登記対象に。ネット販売事業者が知っておくべきポイントをまとめました。"
 coverImageUrl: "/uploads/onlineshopping/tax-registration.png"
 publishedAt: "2022-12-06"

@@ -1,5 +1,6 @@
 ---
 title: "太陽光電廠第一型與第三型綜合探討"
+category: "renewable-energy"
 excerpt: "淺談小型太陽光電廠發展與目標：第一型與第三型的定義、售電對象差異，以及小型電廠轉型第一型面臨的挑戰。"
 coverImageUrl: "/uploads/solarpower/fig0.png"
 publishedAt: "2023-12-28"

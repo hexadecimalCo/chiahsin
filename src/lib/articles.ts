@@ -6,9 +6,16 @@ import type { Locale } from "@/i18n/routing";
 
 const ARTICLES_ROOT = path.join(process.cwd(), "src/content/articles");
 
+export type ArticleCategory =
+  | "foreign-investment"
+  | "renewable-energy"
+  | "tax-basics"
+  | "firm-announcement";
+
 export type Article = {
   slug: string;
   title: string;
+  category: ArticleCategory;
   excerpt: string | null;
   coverImageUrl: string | null;
   publishedAt: Date;
@@ -25,6 +32,7 @@ function readArticleFile(dir: string, filename: string): Article {
   return {
     slug: filename.replace(/\.md$/, ""),
     title: data.title,
+    category: data.category as ArticleCategory,
     excerpt: data.excerpt ?? null,
     coverImageUrl: data.coverImageUrl ?? null,
     publishedAt: data.publishedAt ? new Date(data.publishedAt) : stat.birthtime,

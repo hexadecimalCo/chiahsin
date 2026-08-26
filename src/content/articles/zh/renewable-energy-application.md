@@ -1,5 +1,6 @@
 ---
 title: "再生能源發電業籌設申請"
+category: "renewable-energy"
 excerpt: "依電業法與再生能源發電設備設置管理辦法，說明再生能源發電設備三種類型的差異，以及第一型、第三型的申請流程。"
 coverImageUrl: "/uploads/renewable-energy-application/types.png"
 publishedAt: "2022-09-05"

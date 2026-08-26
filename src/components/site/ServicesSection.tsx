@@ -3,10 +3,10 @@ import { getSiteContent } from "@/content/site-content";
 import type { Locale } from "@/i18n/routing";
 
 export function ServicesSection({ locale }: { locale: Locale }) {
-  const { coreServices, sectionHeaders } = getSiteContent(locale);
+  const { coreServices, article25Promo, renewableNote, sectionHeaders } = getSiteContent(locale);
 
   return (
-    <section id="services" className="scroll-mt-20 bg-white">
+    <section id="services" className="scroll-mt-20 bg-background">
       <div className="mx-auto max-w-6xl px-6 py-20">
         <p className="mb-2 text-xs font-semibold tracking-[0.15em] text-brand-gold">
           {sectionHeaders.services.eyebrow}
@@ -18,7 +18,7 @@ export function ServicesSection({ locale }: { locale: Locale }) {
           {sectionHeaders.services.subtitle}
         </p>
 
-        <div className="mt-10 space-y-6">
+        <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2">
           {coreServices.map((service) => (
             <div
               key={service.number}
@@ -37,6 +37,29 @@ export function ServicesSection({ locale }: { locale: Locale }) {
               </Link>
             </div>
           ))}
+        </div>
+
+        <Link
+          href={article25Promo.href}
+          className="mt-5 flex flex-wrap items-center justify-between gap-5 rounded-lg border border-brand-gold bg-background px-7 py-6"
+        >
+          <div>
+            <span className="mb-4 inline-flex h-9 w-9 items-center justify-center rounded-full border border-brand-gold text-xs font-semibold text-brand-gold">
+              05
+            </span>
+            <p className="text-xs font-semibold tracking-[0.12em] text-brand-gold">
+              {article25Promo.eyebrow}
+            </p>
+            <h3 className="mt-2 text-xl font-semibold text-brand-navy">{article25Promo.title}</h3>
+            <p className="mt-1.5 text-sm text-neutral-500">{article25Promo.description}</p>
+          </div>
+          <span className="flex-none text-sm font-medium text-brand-gold">
+            {article25Promo.linkLabel} →
+          </span>
+        </Link>
+
+        <div className="mt-5 rounded-lg border border-dashed border-brand-gray-300 bg-brand-cream p-6">
+          <p className="text-sm text-neutral-500">{renewableNote}</p>
         </div>
       </div>
     </section>

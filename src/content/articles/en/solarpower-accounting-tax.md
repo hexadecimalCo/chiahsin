@@ -1,5 +1,6 @@
 ---
 title: "A Look at Accounting and Tax in the Solar Power Industry"
+category: "renewable-energy"
 excerpt: "How do revenue recognition, asset depreciation, and tax filing differ for EPC contractors vs. energy service providers in the solar power value chain?"
 coverImageUrl: "/uploads/solarpower-accounting-tax/chain.png"
 publishedAt: "2021-06-04"

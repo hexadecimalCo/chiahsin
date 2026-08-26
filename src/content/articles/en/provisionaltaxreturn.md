@@ -1,5 +1,6 @@
 ---
 title: "What Exactly Is the Business Income Tax Provisional Payment?"
+category: "tax-basics"
 excerpt: "Why do companies pay business income tax in May and then pay again in September? Explains the provisional tax payment system: estimated vs. calculated methods, and exemptions."
 publishedAt: "2023-09-13"
 ---

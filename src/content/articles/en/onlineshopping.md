@@ -1,5 +1,6 @@
 ---
 title: "Checklist for Online Sellers!"
+category: "tax-basics"
 excerpt: "New tax registration rules take effect in 2023 — website domains and platform member accounts for online sales now need to be registered. Here's what online sellers need to know."
 coverImageUrl: "/uploads/onlineshopping/tax-registration.png"
 publishedAt: "2022-12-06"

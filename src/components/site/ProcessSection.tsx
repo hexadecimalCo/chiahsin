@@ -33,7 +33,7 @@ export function ProcessSection({ locale }: { locale: Locale }) {
 
         <div className="mt-12 text-center">
           <Link
-            href="/contact"
+            href="/guide"
             className="inline-block rounded bg-brand-navy-2 px-6 py-3 text-sm font-medium text-brand-on-dark transition hover:bg-brand-navy-hover"
           >
             {sectionHeaders.process.cta}

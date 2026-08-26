@@ -1,5 +1,6 @@
 ---
 title: "再生可能エネルギー発電事業の設立申請"
+category: "renewable-energy"
 excerpt: "電業法及び再生可能エネルギー発電設備設置管理弁法に基づき、再生可能エネルギー発電設備の3つの類型の違いと、第一型・第三型の申請フローを解説します。"
 coverImageUrl: "/uploads/renewable-energy-application/types.png"
 publishedAt: "2022-09-05"

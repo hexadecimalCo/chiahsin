@@ -1,5 +1,6 @@
 ---
 title: "太陽光発電所 第一型と第三型の総合的考察"
+category: "renewable-energy"
 excerpt: "小規模太陽光発電所の発展と展望：第一型・第三型の定義、売電先の違い、そして小規模発電所が第一型へ転換する際の課題について解説します。"
 coverImageUrl: "/uploads/solarpower/fig0.png"
 publishedAt: "2023-12-28"

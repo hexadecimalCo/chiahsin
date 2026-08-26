@@ -1,5 +1,6 @@
 ---
 title: "Firm Name Change Announcement: Welcome to Yi Ting Accounting Firm!"
+category: "firm-announcement"
 excerpt: "Our firm has officially changed its name to Yi Ting Accounting Firm. Existing contracts remain valid and unaffected."
 publishedAt: "2024-11-27"
 ---

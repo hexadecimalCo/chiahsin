@@ -6,6 +6,10 @@
     "about": "About Us",
     "contact": "Contact"
   },
+  "mobileMenu": {
+    "open": "Open menu",
+    "close": "Close menu"
+  },
   "footer": {
     "phone": "Phone",
     "email": "Email",
@@ -19,7 +23,18 @@
   },
   "blog": {
     "title": "Articles",
-    "empty": "No articles yet"
+    "empty": "No articles yet",
+    "categories": {
+      "all": "All",
+      "foreign-investment": "Company Setup",
+      "renewable-energy": "Renewable Energy",
+      "tax-basics": "Tax Basics",
+      "firm-announcement": "Firm Announcements"
+    },
+    "prevArticle": "Previous",
+    "nextArticle": "Next",
+    "ctaText": "Have questions about this article or your company's situation? Feel free to get in touch.",
+    "ctaLabel": "Book a Consultation"
   },
   "search": {
     "title": "Search",
@@ -29,11 +44,28 @@
   },
   "contactForm": {
     "title": "Contact Us",
+    "intro": "Tell us about your company and which service you'd like to discuss — we'll reply within 1 business day.",
+    "company": "Company Name",
+    "region": "Company's Country / Region",
+    "service": "Service You're Interested In",
+    "serviceOptions": [
+      "Company Formation & FIA Registration",
+      "Tax Registration & Filing",
+      "Bookkeeping",
+      "Payroll Outsourcing",
+      "Income Tax Act Article 25 Application",
+      "Other"
+    ],
     "name": "Name",
     "email": "Email",
     "message": "Message",
     "submit": "Submit",
-    "submitting": "Submitting…"
+    "submitting": "Submitting…",
+    "consent": "By submitting, you agree that we will only use the information you provide to respond to this inquiry, and for no other purpose.",
+    "officeInfoTitle": "Office Information",
+    "addressLabel": "Address",
+    "hoursLabel": "Business Hours",
+    "languagesLabel": "Languages"
   },
   "notFound": {
     "title": "Page not found",
@@ -42,5 +74,11 @@
   },
   "lineButton": {
     "label": "Add us on LINE"
+  },
+  "instagram": {
+    "eyebrow": "INSTAGRAM",
+    "cta": "Visit Instagram",
+    "fallbackDescription": "Weekly notes on foreign investment setup, tax, and renewable energy practice.",
+    "altFallback": "Instagram post"
   }
 }

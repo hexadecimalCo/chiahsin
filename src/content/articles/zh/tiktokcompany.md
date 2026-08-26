@@ -1,5 +1,6 @@
 ---
 title: "抖音台灣分公司? 從新聞看公司設立應注意事項"
+category: "foreign-investment"
 excerpt: "從「字節跳動台灣」變更登記的新聞事件，聊聊公司設立時要確定的公司名稱、資本股東與登記地址三件事。"
 coverImageUrl: "/uploads/tiktokcompany/registry-1.png"
 publishedAt: "2022-12-20"

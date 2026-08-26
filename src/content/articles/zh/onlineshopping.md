@@ -1,5 +1,6 @@
 ---
 title: "網拍賣家的Check List來了!"
+category: "tax-basics"
 excerpt: "112年起稅籍登記新制上路，網路銷售的網域名稱、會員帳號都要一併登記，整理網拍賣家該注意的重點。"
 coverImageUrl: "/uploads/onlineshopping/tax-registration.png"
 publishedAt: "2022-12-06"

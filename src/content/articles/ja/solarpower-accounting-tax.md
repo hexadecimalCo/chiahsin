@@ -1,5 +1,6 @@
 ---
 title: "太陽光発電産業の会計・税務について"
+category: "renewable-energy"
 excerpt: "太陽光発電のバリューチェーンにおいて、EPC請負業者とエネルギーサービス事業者では、収益認識、資産の減価償却、税務申告にどのような違いがあるのでしょうか。"
 coverImageUrl: "/uploads/solarpower-accounting-tax/chain.png"
 publishedAt: "2021-06-04"

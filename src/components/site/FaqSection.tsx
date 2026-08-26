@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { Link } from "@/i18n/navigation";
 import { getSiteContent } from "@/content/site-content";
 import { getFaqPageSchema } from "@/lib/schema";
 import type { Locale } from "@/i18n/routing";
@@ -12,12 +11,12 @@ export function FaqSection({ locale }: { locale: Locale }) {
   const faqPageSchema = getFaqPageSchema(locale);
 
   return (
-    <section className="bg-white py-20">
+    <section className="bg-background py-20">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageSchema) }}
       />
-      <div className="mx-auto max-w-3xl px-6">
+      <div className="mx-auto max-w-6xl px-6">
         <p className="mb-2 text-xs font-semibold tracking-[0.15em] text-brand-gold">
           {sectionHeaders.faq.eyebrow}
         </p>
@@ -33,22 +32,38 @@ export function FaqSection({ locale }: { locale: Locale }) {
                 <button
                   type="button"
                   onClick={() => setOpenIndex(isOpen ? null : index)}
-                  className="flex w-full flex-col items-start py-6 text-left"
+                  className="flex w-full cursor-pointer items-center justify-between gap-4 py-6 text-left"
                 >
                   <span className="font-medium text-brand-navy">{faq.question}</span>
-                  <span className="mt-2 text-neutral-400">{isOpen ? "−" : "+"}</span>
+                  <span className="shrink-0 text-neutral-400">{isOpen ? "−" : "+"}</span>
                 </button>
-                {isOpen && <p className="pb-6 text-sm text-neutral-500">{faq.answer}</p>}
+                {isOpen && (
+                  <div className="space-y-3 pb-6 text-sm text-neutral-500">
+                    {faq.answer.map((paragraph, paragraphIndex) => {
+                      if (paragraph.linkText && paragraph.href) {
+                        const [before, after] = paragraph.text.split(paragraph.linkText);
+                        return (
+                          <p key={paragraphIndex}>
+                            {before}
+                            <a
+                              href={paragraph.href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-brand-gold underline hover:no-underline"
+                            >
+                              {paragraph.linkText}
+                            </a>
+                            {after}
+                          </p>
+                        );
+                      }
+                      return <p key={paragraphIndex}>{paragraph.text}</p>;
+                    })}
+                  </div>
+                )}
               </div>
             );
           })}
-        </div>
-
-        <div className="mt-10 flex flex-wrap items-center justify-between gap-4 rounded-lg border border-dashed border-brand-gray-300 bg-brand-cream p-6">
-          <p className="max-w-xl text-sm text-neutral-500">{sectionHeaders.faq.note}</p>
-          <Link href="/blog" className="text-sm font-medium text-brand-gold hover:underline">
-            {sectionHeaders.faq.cta} →
-          </Link>
         </div>
       </div>
     </section>
