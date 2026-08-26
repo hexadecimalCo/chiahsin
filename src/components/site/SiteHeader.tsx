@@ -27,6 +27,20 @@ export function SiteHeader() {
     { href: "/contact", label: t("contact") },
   ];
 
+  // If we're already on the target URL (same pathname + hash), Link won't
+  // navigate, so clicking the nav item again wouldn't re-scroll to it after
+  // the user has scrolled away. Handle that case manually.
+  const handleHashNav = (href: string) => (e: React.MouseEvent) => {
+    const hashIndex = href.indexOf("#");
+    if (hashIndex === -1) return;
+    const targetPath = href.slice(0, hashIndex) || "/";
+    const targetId = href.slice(hashIndex + 1);
+    if (pathname === targetPath && window.location.hash === `#${targetId}`) {
+      e.preventDefault();
+      document.getElementById(targetId)?.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <header className="sticky top-0 z-40 border-b border-brand-gray-300 bg-background">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
@@ -44,7 +58,12 @@ export function SiteHeader() {
         <div className="hidden items-center gap-7 md:flex">
           <nav className="flex gap-7 text-sm text-brand-navy/80">
             {navItems.map((item) => (
-              <Link key={item.href} href={item.href} className="transition hover:text-brand-gold">
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={handleHashNav(item.href)}
+                className="transition hover:text-brand-gold"
+              >
                 {item.label}
               </Link>
             ))}
@@ -88,7 +107,10 @@ export function SiteHeader() {
             <Link
               key={item.href}
               href={item.href}
-              onClick={() => setOpen(false)}
+              onClick={(e) => {
+                handleHashNav(item.href)(e);
+                setOpen(false);
+              }}
               className="flex min-h-[52px] items-center justify-between border-b border-brand-gray-300 text-base text-brand-navy last:border-b-0"
             >
               {item.label}

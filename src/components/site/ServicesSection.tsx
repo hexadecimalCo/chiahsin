@@ -3,7 +3,7 @@ import { getSiteContent } from "@/content/site-content";
 import type { Locale } from "@/i18n/routing";
 
 export function ServicesSection({ locale }: { locale: Locale }) {
-  const { coreServices, article25Promo, renewableNote, sectionHeaders } = getSiteContent(locale);
+  const { coreServices, article25Promo, sectionHeaders } = getSiteContent(locale);
 
   return (
     <section id="services" className="scroll-mt-20 bg-background">
@@ -57,10 +57,6 @@ export function ServicesSection({ locale }: { locale: Locale }) {
             {article25Promo.linkLabel} →
           </span>
         </Link>
-
-        <div className="mt-5 rounded-lg border border-dashed border-brand-gray-300 bg-brand-cream p-6">
-          <p className="text-sm text-neutral-500">{renewableNote}</p>
-        </div>
       </div>
     </section>
   );

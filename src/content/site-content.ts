@@ -30,7 +30,6 @@ type SiteContent = {
   };
   processSteps: Array<{ number: string; title: string; duration: string }>;
   clientTypes: Array<{ title: string; description: string }>;
-  renewableNote: string;
   about: {
     name: string;
     role: string;
@@ -133,8 +132,6 @@ const content: Record<Locale, SiteContent> = {
         description: "從設立、記帳到日常財稅需求，以務實且符合成本效益的方式協助企業穩健營運。",
       },
     ],
-    renewableNote:
-      "除了外商設立服務，本所也深耕再生能源產業會計多年，具備太陽光電廠設立、售電及稅務相關實務經驗。",
     about: {
       name: "徐嘉欣",
       role: "佾廷會計師事務所 會計師",
@@ -144,6 +141,7 @@ const content: Record<Locale, SiteContent> = {
         {
           label: "公會職務",
           items: [
+            "新北市會計師公會 理事",
             "中華稅務代理人協會 理事",
             "會計師全國聯合會智庫服務委員會 執行長",
             "會計師全國聯合會公共政策委員會 委員",
@@ -322,8 +320,6 @@ const content: Record<Locale, SiteContent> = {
           "From setup and bookkeeping to everyday financial and tax needs, we support your business with a practical, cost-effective approach.",
       },
     ],
-    renewableNote:
-      "Beyond foreign investment services, we've spent years in renewable energy accounting, with hands-on experience in solar plant setup, power sales and related tax matters.",
     about: {
       name: "Chia-Hsin Hsu",
       role: "Certified Public Accountant, Yi Ting Accounting Firm",
@@ -333,6 +329,7 @@ const content: Record<Locale, SiteContent> = {
         {
           label: "Association Roles",
           items: [
+            "Director, New Taipei City Certified Public Accountants Association",
             "Director, Chinese Association of Tax Agents",
             "Executive Director, Think Tank Service Committee, National Federation of CPA Associations, R.O.C.",
             "Member, Public Policy Committee, National Federation of CPA Associations, R.O.C.",
@@ -521,8 +518,6 @@ const content: Record<Locale, SiteContent> = {
           "設立、記帳から日々の財務・税務ニーズまで、実務的でコストパフォーマンスに優れた方法で安定した経営をサポートします。",
       },
     ],
-    renewableNote:
-      "外資設立サービスのほか、当事務所は再生可能エネルギー産業の会計にも長年携わっており、太陽光発電所の設立、売電、税務に関する実務経験を有しています。",
     about: {
       name: "徐 嘉欣",
       role: "佾廷会計士事務所 会計士",
@@ -532,6 +527,7 @@ const content: Record<Locale, SiteContent> = {
         {
           label: "公会での役職",
           items: [
+            "新北市会計士公会 理事",
             "中華税務代理人協会 理事",
             "会計師全国連合会シンクタンクサービス委員会 執行長",
             "会計師全国連合会公共政策委員会 委員",

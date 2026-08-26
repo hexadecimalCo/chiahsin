@@ -58,7 +58,18 @@ export default async function TaxIncentivePage({
           {stats.map((stat) => (
             <div key={stat.value} className="bg-brand-cream p-6">
               <p className="text-[34px] font-bold tracking-tight text-brand-navy">{stat.value}</p>
-              <p className="mt-1.5 text-[13px] leading-relaxed text-brand-navy/70">{stat.label}</p>
+              {stat.href ? (
+                <a
+                  href={stat.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-1.5 block text-[13px] leading-relaxed text-brand-gold underline hover:no-underline"
+                >
+                  {stat.label}
+                </a>
+              ) : (
+                <p className="mt-1.5 text-[13px] leading-relaxed text-brand-navy/70">{stat.label}</p>
+              )}
             </div>
           ))}
         </div>

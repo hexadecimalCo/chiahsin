@@ -10,7 +10,7 @@ type TaxIncentiveContent = {
   eyebrow: string;
   title: string;
   lead: string;
-  stats: Array<{ value: string; label: string }>;
+  stats: Array<{ value: string; label: string; href?: string }>;
   caseStudiesTitle: string;
   cases: Array<{
     /** Country code, e.g. JP / VN. No flag emoji. */
@@ -40,7 +40,11 @@ const content: Record<Locale, TaxIncentiveContent> = {
     stats: [
       { value: "15%", label: "核准後之所得額計算基礎（按境內營業收入）" },
       { value: "2 件", label: "已獲准適用之申請案：日本／越南企業" },
-      { value: "§25 I", label: "適用法源：技術服務等業務收入" },
+      {
+        value: "§25 I",
+        label: "適用法源：所得稅法第25條第1項",
+        href: "https://www.ntbt.gov.tw/multiplehtml/5216a27b245e41f3ba4d79bce7807d08",
+      },
     ],
     caseStudiesTitle: "實績案例",
     cases: [
@@ -93,7 +97,11 @@ const content: Record<Locale, TaxIncentiveContent> = {
     stats: [
       { value: "15%", label: "Taxable income basis once approved (of Taiwan-sourced revenue)" },
       { value: "2 cases", label: "Approved applications: Japanese / Vietnamese companies" },
-      { value: "§25(1)", label: "Legal basis: income from technical services and similar business" },
+      {
+        value: "§25(1)",
+        label: "Legal basis: Income Tax Act Article 25, Paragraph 1",
+        href: "https://www.ntbt.gov.tw/multiplehtml/5216a27b245e41f3ba4d79bce7807d08",
+      },
     ],
     caseStudiesTitle: "Track Record",
     cases: [
@@ -148,7 +156,11 @@ We previously assisted **a Japanese company with income from technical services 
     stats: [
       { value: "15%", label: "承認後の所得額計算基準（台湾国内営業収入に対して）" },
       { value: "2件", label: "承認済みの申請案件：日本／ベトナム企業" },
-      { value: "§25 I", label: "適用法源：技術サービス等業務収入" },
+      {
+        value: "§25 I",
+        label: "適用法源：所得税法第25条第1項",
+        href: "https://www.ntbt.gov.tw/multiplehtml/5216a27b245e41f3ba4d79bce7807d08",
+      },
     ],
     caseStudiesTitle: "実績",
     cases: [
