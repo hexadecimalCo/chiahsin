@@ -56,9 +56,9 @@ export default async function ArticlePage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <h1 className="mb-3 text-3xl font-bold text-slate-900">{article.title}</h1>
+      <h1 className="mb-3 text-3xl font-bold text-brand-navy">{article.title}</h1>
       {article.publishedAt && (
-        <p className="mb-8 text-sm text-slate-400">
+        <p className="mb-8 text-sm text-brand-navy/50">
           {article.publishedAt.toLocaleDateString(locale)}
         </p>
       )}

@@ -14,7 +14,7 @@ export function CtaSection({ locale }: { locale: Locale }) {
         </p>
         <Link
           href="/contact"
-          className="mt-8 inline-block rounded bg-[#b08d4e] px-6 py-3 text-sm font-medium text-brand-navy transition hover:opacity-90"
+          className="mt-8 inline-block rounded bg-brand-navy-2 px-6 py-3 text-sm font-medium text-brand-on-dark transition hover:bg-brand-navy-hover"
         >
           {sectionHeaders.cta.cta}
         </Link>

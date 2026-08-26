@@ -69,7 +69,7 @@ export function ContactSection() {
         <button
           type="submit"
           disabled={pending}
-          className="w-full rounded bg-[#b08d4e] px-4 py-2.5 text-sm font-medium text-brand-navy transition hover:opacity-90 disabled:opacity-50"
+          className="w-full rounded bg-brand-navy-2 px-4 py-2.5 text-sm font-medium text-brand-on-dark transition hover:bg-brand-navy-hover disabled:opacity-50"
         >
           {pending ? t("submitting") : t("submit")}
         </button>

@@ -21,7 +21,7 @@ export function ProcessSection({ locale }: { locale: Locale }) {
           <div className="relative grid grid-cols-1 gap-10 sm:grid-cols-5 sm:gap-0">
             {processSteps.map((step) => (
               <div key={step.number} className="flex flex-col items-center text-center">
-                <span className="relative z-10 mb-4 inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#b08d4e] text-sm font-semibold text-brand-navy">
+                <span className="relative z-10 mb-4 inline-flex h-10 w-10 items-center justify-center rounded-full bg-brand-navy-2 text-sm font-semibold text-brand-on-dark">
                   {step.number}
                 </span>
                 <h3 className="mb-1 text-sm font-semibold text-brand-navy">{step.title}</h3>
@@ -34,7 +34,7 @@ export function ProcessSection({ locale }: { locale: Locale }) {
         <div className="mt-12 text-center">
           <Link
             href="/contact"
-            className="inline-block rounded bg-[#b08d4e] px-6 py-3 text-sm font-medium text-brand-navy transition hover:opacity-90"
+            className="inline-block rounded bg-brand-navy-2 px-6 py-3 text-sm font-medium text-brand-on-dark transition hover:bg-brand-navy-hover"
           >
             {sectionHeaders.process.cta}
           </Link>

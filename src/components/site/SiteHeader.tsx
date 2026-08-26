@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { LanguageSwitcher } from "./LanguageSwitcher";
@@ -16,8 +17,15 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 border-b border-brand-gray-300 bg-white">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <Link href="/" className="text-base font-semibold tracking-wide text-brand-navy">
-          佾廷<span className="text-brand-gold">會計師事務所</span>
+        <Link href="/" className="block">
+          <Image
+            src="/logo.png"
+            alt="佾廷會計師事務所"
+            width={570}
+            height={147}
+            priority
+            className="h-9 w-auto"
+          />
         </Link>
         <div className="flex items-center gap-7">
           <nav className="hidden gap-7 text-sm text-brand-navy/80 md:flex">

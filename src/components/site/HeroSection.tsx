@@ -22,7 +22,7 @@ export function HeroSection({ locale }: { locale: Locale }) {
         <div className="mt-8 flex flex-wrap items-center gap-4">
           <Link
             href={heroContent.primaryCta.href}
-            className="rounded-md bg-[#b08d4e] px-6 py-3 text-sm font-medium text-brand-navy transition hover:opacity-90"
+            className="rounded-md bg-brand-navy-2 px-6 py-3 text-sm font-medium text-brand-on-dark transition hover:bg-brand-navy-hover"
           >
             {heroContent.primaryCta.label}
           </Link>

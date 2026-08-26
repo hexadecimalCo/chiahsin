@@ -1,20 +1,21 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #1c2333;
+  --background: #fdfbf8;
+  --foreground: #332c27;
 
-  /* Brand palette: extracted from official logo asset (白/米杏/深棕炭 + 金 accent) */
-  --brand-navy: #3d3935;
-  --brand-navy-2: #4a443f;
-  --brand-navy-hover: #55504a;
-  --brand-gold: #c9a227;
-  --brand-gold-hover: #b3901f;
-  --brand-cream: #d8cfc5;
-  --brand-gray-100: #f5f3f0;
-  --brand-gray-200: #ebe7e1;
-  --brand-gray-300: #ddd6cd;
-  --brand-gray-400: #c4bbae;
+  /* Brand palette: A3 米白·磚紅（名片感淺色系） */
+  --brand-navy: #332c27;
+  --brand-navy-2: #4a3f38;
+  --brand-navy-hover: #584b42;
+  --brand-gold: #8f5340;
+  --brand-gold-hover: #7c4736;
+  --brand-cream: #f7f1e9;
+  --brand-gray-100: #faf7f2;
+  --brand-gray-200: #f2ebe2;
+  --brand-gray-300: #ebe2d6;
+  --brand-gray-400: #ddd0c0;
+  --brand-on-dark: #fdfbf8;
 }
 
 @theme inline {
@@ -30,6 +31,7 @@
   --color-brand-gray-200: var(--brand-gray-200);
   --color-brand-gray-300: var(--brand-gray-300);
   --color-brand-gray-400: var(--brand-gray-400);
+  --color-brand-on-dark: var(--brand-on-dark);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
