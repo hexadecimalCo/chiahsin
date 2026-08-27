@@ -44,27 +44,3 @@ body {
   cursor: image-set(url(/cursors/cat-default.png) 1x, url(/cursors/cat-default-2x.png) 2x) 5 5,
     auto;
 }
-
-a,
-button,
-[role="button"],
-input[type="submit"],
-input[type="button"],
-input[type="reset"],
-select,
-summary,
-label[for],
-.cursor-pointer {
-  cursor: image-set(url(/cursors/cat-hover.png) 1x, url(/cursors/cat-hover-2x.png) 2x) 13 8,
-    pointer;
-}
-
-button:disabled,
-input:disabled,
-select:disabled,
-textarea:disabled,
-[aria-disabled="true"],
-.cursor-not-allowed {
-  cursor: image-set(url(/cursors/cat-disabled.png) 1x, url(/cursors/cat-disabled-2x.png) 2x) 5 5,
-    not-allowed;
-}
