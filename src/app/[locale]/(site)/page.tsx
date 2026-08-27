@@ -296,30 +296,25 @@ export default async function Home({
       </section>
 
       {/* CTA */}
-      <section className="mx-auto max-w-[1280px] px-11 py-28">
+      <section className="mx-auto max-w-[1280px] px-11 py-28 text-center">
         <h2
           className="font-medium tracking-[-0.045em] text-brand-navy"
           style={{ fontSize: "clamp(32px, 6vw, 84px)" }}
         >
           {sectionHeaders.cta.title}
         </h2>
-        <div className="mt-8 flex flex-wrap items-end justify-between gap-6">
-          <p className="text-neutral-500" style={{ maxWidth: "520px" }}>
-            {sectionHeaders.cta.subtitle}
-          </p>
-          <Link
-            href={heroContent.primaryCta.href}
-            className="inline-block flex-none rounded-md bg-brand-navy-2 px-8 py-4 text-sm font-medium text-brand-on-dark transition hover:bg-brand-navy-hover"
-          >
-            {sectionHeaders.cta.cta}
-          </Link>
-        </div>
-        <div className="mt-12 flex flex-wrap items-center justify-between gap-x-8 gap-y-3 border-t border-brand-gray-300 pt-8 text-sm text-neutral-500">
-          <div className="flex flex-wrap items-center gap-x-8 gap-y-3">
-            <span>{siteInfo.phone}</span>
-            <span>{siteInfo.email}</span>
-            <span>LINE {siteInfo.line}</span>
-          </div>
+        <p className="mx-auto mt-6 max-w-xl text-neutral-500">{sectionHeaders.cta.subtitle}</p>
+        <Link
+          href={heroContent.primaryCta.href}
+          className="mt-8 inline-block rounded-md bg-brand-navy-2 px-8 py-4 text-sm font-medium text-brand-on-dark transition hover:bg-brand-navy-hover"
+        >
+          {sectionHeaders.cta.cta}
+        </Link>
+
+        <div className="mx-auto mt-12 flex max-w-2xl flex-wrap items-center justify-center gap-x-8 gap-y-3 border-t border-brand-gray-300 pt-8 text-sm text-neutral-500">
+          <span>{siteInfo.phone}</span>
+          <span>{siteInfo.email}</span>
+          <span>LINE {siteInfo.line}</span>
           <span>{siteInfo.address}</span>
         </div>
       </section>
