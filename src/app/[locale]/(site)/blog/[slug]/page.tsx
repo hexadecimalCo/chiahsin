@@ -25,7 +25,7 @@ export async function generateMetadata({
     openGraph: {
       title: article.title,
       description: article.excerpt ?? undefined,
-      images: article.coverImageUrl ? [article.coverImageUrl] : undefined,
+      images: [article.coverImageUrl ?? "/og-default.png"],
     },
   };
 }
