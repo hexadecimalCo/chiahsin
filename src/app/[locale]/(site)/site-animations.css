@@ -1,8 +1,8 @@
-/* Styles scoped to the /preview/* demo routes only. Reuses the site's
+/* Scroll/reveal animations for the home and guide pages. Reuses the site's
    existing brand tokens (defined globally in globals.css) and adds only the
    handful of colors that don't already have a token. */
 
-.preview-root {
+.animated-page {
   --preview-text-secondary: var(--brand-navy-hover); /* #584b42, spec asked for #584c43 */
   --preview-text-muted-on-cream: #6d6158;
   --preview-text-muted-on-paper: #7e7166;
@@ -47,24 +47,6 @@
   to {
     transform: scaleX(1);
   }
-}
-
-/* ---------- Fixed header ---------- */
-
-.preview-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 50;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 14px 24px;
-  background: rgba(253, 251, 248, 0.9);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--brand-gray-300);
 }
 
 /* ---------- Decorative circles ---------- */
@@ -202,36 +184,7 @@
   }
 }
 
-/* ---------- Core services: sticky scale-out panels ---------- */
-
-.preview-service-section {
-  position: relative;
-  height: 150vh;
-}
-
-.preview-service-sticky {
-  position: sticky;
-  top: 18vh;
-  height: 82vh;
-  display: flex;
-  align-items: center;
-  background: var(--background);
-}
-
-@supports (animation-timeline: view()) {
-  .preview-service-sticky {
-    animation: preview-service-exit linear both;
-    animation-timeline: view();
-    animation-range: exit 0% exit 100%;
-  }
-}
-
-@keyframes preview-service-exit {
-  to {
-    transform: scale(0.86);
-    opacity: 0;
-  }
-}
+/* ---------- Core services: three-column row layout ---------- */
 
 .preview-service-grid {
   display: grid;
@@ -350,6 +303,250 @@
   top: 130px;
 }
 
+/* ---------- Setup process: vertical scroll-driven timeline ---------- */
+
+.proc-timeline {
+  position: relative;
+  padding-left: 72px;
+}
+
+.proc-track {
+  position: absolute;
+  left: 5px;
+  top: 12px;
+  bottom: 40px;
+  width: 1px;
+  background: var(--brand-gray-300);
+}
+
+.proc-track-fill {
+  position: absolute;
+  inset: 0;
+  width: 1px;
+  background: var(--brand-gold);
+  transform-origin: 50% 0;
+  transform: scaleY(1);
+}
+
+.proc-row {
+  position: relative;
+  border-bottom: 1px solid var(--brand-gray-300);
+}
+
+.proc-dot {
+  position: absolute;
+  left: -72px;
+  top: 46px;
+  width: 11px;
+  height: 11px;
+  border-radius: 999px;
+  background: var(--brand-gold);
+  opacity: 1;
+  transform: scale(1);
+}
+
+.proc-row-grid {
+  display: grid;
+  grid-template-columns: 116px 1fr 180px;
+  gap: 32px;
+  align-items: center;
+  padding: 28px 0;
+  opacity: 1;
+  transform: none;
+}
+
+.proc-number {
+  font-family: var(--preview-mono);
+  font-size: 64px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  transform-origin: 0 50%;
+  transform: scale(1);
+  color: var(--brand-gold);
+}
+
+.proc-title {
+  font-size: 26px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--brand-navy);
+}
+
+.proc-progress-row {
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.proc-progress-track {
+  flex: 1;
+  height: 4px;
+  background: #f0e8dc;
+}
+
+.proc-progress-fill {
+  height: 100%;
+  background: var(--brand-gold);
+  transform-origin: 0 50%;
+  transform: scaleX(1);
+}
+
+.proc-progress-label {
+  flex: none;
+  font-family: var(--preview-mono);
+  font-size: 12px;
+  color: var(--preview-text-muted-on-paper);
+}
+
+.proc-duration {
+  font-size: 14px;
+  text-align: right;
+  color: var(--brand-gold);
+}
+
+@supports (animation-timeline: view()) {
+  .proc-timeline {
+    view-timeline-name: --proc;
+    view-timeline-axis: block;
+  }
+
+  .proc-track-fill {
+    transform: scaleY(0);
+    animation: proc-track-draw linear both;
+    animation-timeline: --proc;
+    animation-range: entry 20% cover 70%;
+  }
+
+  .proc-dot {
+    opacity: 0;
+    transform: scale(0.2);
+    animation: proc-dot-in linear both;
+    animation-timeline: --proc;
+  }
+
+  .proc-number {
+    transform: scale(0.78);
+    color: #ddd0c0;
+    animation: proc-number-follow linear both;
+    animation-timeline: --proc;
+  }
+
+  .proc-progress-fill {
+    transform: scaleX(0);
+    animation: proc-progress-grow linear both;
+    animation-timeline: --proc;
+  }
+
+  .proc-row-grid {
+    opacity: 0;
+    transform: translateX(28px);
+    animation: proc-row-in linear both;
+    animation-timeline: --proc;
+  }
+
+  .proc-row-0 .proc-number {
+    animation-range: entry 10% exit 30%;
+  }
+  .proc-row-0 .proc-dot {
+    animation-range: entry 22% entry 40%;
+  }
+  .proc-row-0 .proc-progress-fill,
+  .proc-row-0 .proc-row-grid {
+    animation-range: entry 26% cover 30%;
+  }
+
+  .proc-row-1 .proc-number {
+    animation-range: entry 19% exit 39%;
+  }
+  .proc-row-1 .proc-dot {
+    animation-range: entry 31% entry 49%;
+  }
+  .proc-row-1 .proc-progress-fill,
+  .proc-row-1 .proc-row-grid {
+    animation-range: entry 35% cover 38%;
+  }
+
+  .proc-row-2 .proc-number {
+    animation-range: entry 28% exit 48%;
+  }
+  .proc-row-2 .proc-dot {
+    animation-range: entry 40% entry 58%;
+  }
+  .proc-row-2 .proc-progress-fill,
+  .proc-row-2 .proc-row-grid {
+    animation-range: entry 44% cover 46%;
+  }
+
+  .proc-row-3 .proc-number {
+    animation-range: entry 37% exit 57%;
+  }
+  .proc-row-3 .proc-dot {
+    animation-range: entry 49% entry 67%;
+  }
+  .proc-row-3 .proc-progress-fill,
+  .proc-row-3 .proc-row-grid {
+    animation-range: entry 53% cover 54%;
+  }
+
+  .proc-row-4 .proc-number {
+    animation-range: entry 46% exit 66%;
+  }
+  .proc-row-4 .proc-dot {
+    animation-range: entry 58% entry 76%;
+  }
+  .proc-row-4 .proc-progress-fill,
+  .proc-row-4 .proc-row-grid {
+    animation-range: entry 62% cover 62%;
+  }
+}
+
+@keyframes proc-track-draw {
+  to {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes proc-dot-in {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes proc-number-follow {
+  0% {
+    transform: scale(0.78);
+    color: #ddd0c0;
+  }
+  42% {
+    transform: scale(1);
+    color: var(--brand-gold);
+  }
+  58% {
+    transform: scale(1);
+    color: var(--brand-gold);
+  }
+  100% {
+    transform: scale(0.78);
+    color: #ddd0c0;
+  }
+}
+
+@keyframes proc-progress-grow {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes proc-row-in {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 /* ---------- Reduced motion: freeze everything at its resting state ---------- */
 
 @media (prefers-reduced-motion: reduce) {
@@ -377,12 +574,6 @@
     display: none;
   }
 
-  .preview-service-sticky {
-    animation: none;
-    transform: none;
-    opacity: 1;
-  }
-
   .preview-about-photo,
   .preview-about-photo img {
     animation: none;
@@ -400,30 +591,65 @@
     animation: none;
     transform: scaleY(1);
   }
+
+  .proc-track-fill,
+  .proc-dot,
+  .proc-number,
+  .proc-progress-fill,
+  .proc-row-grid {
+    animation: none;
+  }
+
+  .proc-track-fill {
+    transform: scaleY(1);
+  }
+
+  .proc-dot {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .proc-number {
+    transform: scale(1);
+    color: var(--brand-gold);
+  }
+
+  .proc-progress-fill {
+    transform: scaleX(1);
+  }
+
+  .proc-row-grid {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 /* ---------- Mobile ---------- */
 
 @media (max-width: 900px) {
-  .preview-service-section {
-    height: auto;
-  }
-
-  .preview-service-sticky {
-    position: static;
-    height: auto;
-    display: block;
-    padding: 48px 0;
-    animation: none !important;
-    transform: none !important;
-    opacity: 1 !important;
-  }
-
   .preview-guide-grid {
     grid-template-columns: 1fr !important;
   }
 
   .preview-guide-step-sticky {
     position: static;
+  }
+
+  .proc-timeline {
+    padding-left: 40px;
+  }
+
+  .proc-dot {
+    left: -40px;
+  }
+
+  .proc-row-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    align-items: start;
+  }
+
+  .proc-duration {
+    text-align: left;
   }
 }

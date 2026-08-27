@@ -5,15 +5,13 @@ export default function robots(): MetadataRoute.Robots {
 
   return {
     rules: [
-      { userAgent: "*", allow: "/", disallow: ["/preview/"] },
+      { userAgent: "*", allow: "/" },
       // Explicitly allow AI answer-engine crawlers for AEO (client-confirmed policy).
-      // Each still gets its own disallow — a matching named user-agent block
-      // replaces the wildcard block entirely rather than merging with it.
-      { userAgent: "GPTBot", allow: "/", disallow: ["/preview/"] },
-      { userAgent: "PerplexityBot", allow: "/", disallow: ["/preview/"] },
-      { userAgent: "Google-Extended", allow: "/", disallow: ["/preview/"] },
-      { userAgent: "ClaudeBot", allow: "/", disallow: ["/preview/"] },
-      { userAgent: "anthropic-ai", allow: "/", disallow: ["/preview/"] },
+      { userAgent: "GPTBot", allow: "/" },
+      { userAgent: "PerplexityBot", allow: "/" },
+      { userAgent: "Google-Extended", allow: "/" },
+      { userAgent: "ClaudeBot", allow: "/" },
+      { userAgent: "anthropic-ai", allow: "/" },
     ],
     sitemap: `${siteUrl}/sitemap.xml`,
   };

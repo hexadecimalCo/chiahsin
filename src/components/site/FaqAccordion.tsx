@@ -7,7 +7,7 @@ type Faq = {
   answer: Array<{ text: string; linkText?: string; href?: string }>;
 };
 
-export function PreviewFaqAccordion({ faqs }: { faqs: Faq[] }) {
+export function FaqAccordion({ faqs }: { faqs: Faq[] }) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
