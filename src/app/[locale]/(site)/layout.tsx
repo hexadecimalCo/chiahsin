@@ -2,6 +2,7 @@ import "./site-animations.css";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { LineFloatingButton } from "@/components/site/LineFloatingButton";
+import { ScrollCat } from "@/components/site/ScrollCat";
 import { ScrollToTopOnNavigate } from "@/components/site/ScrollToTopOnNavigate";
 import { getOrganizationSchema } from "@/lib/schema";
 import type { Locale } from "@/i18n/routing";
@@ -28,6 +29,7 @@ export default async function SiteLayout({
       <main className="flex-1">{children}</main>
       <SiteFooter />
       <LineFloatingButton />
+      <ScrollCat />
     </>
   );
 }
