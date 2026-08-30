@@ -8,7 +8,7 @@ const ARTIST_URL = "https://www.instagram.com/ojisanhara/";
 const SCROLL_STOP_DELAY_MS = 150;
 const WALK_SPEED_PX_PER_SEC = 40;
 const SPRITE_WIDTH = 90;
-const JUMP_FALL_FPS = DEFAULT_FPS * 2;
+const JUMP_FALL_FPS = DEFAULT_FPS * 3;
 
 type CatState = "idle" | "jumping-up" | "suspended";
 
