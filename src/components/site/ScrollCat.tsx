@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 // public/cat/down.gif's total animation length (41 frames, see file for per-frame
 // delays) — used to know when the landing animation has finished playing so we
 // can switch back to walk.gif. Keep in sync if the gif is ever re-exported.
-const DOWN_GIF_DURATION_MS = 2740;
+const DOWN_GIF_DURATION_MS = 1640;
 const SCROLL_STOP_DELAY_MS = 150;
 const WALK_SPEED_PX_PER_SEC = 40;
 
