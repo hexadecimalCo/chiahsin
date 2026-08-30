@@ -1,23 +1,22 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import CatSprite, { type CatSpriteHandle } from "@/components/cat/CatSprite";
+import { DEFAULT_FPS, type CatClip } from "@/components/cat/catClips";
 
-// public/cat/down.gif's total animation length (41 frames, see file for per-frame
-// delays) — used to know when the landing animation has finished playing so we
-// can switch back to walk.gif. Keep in sync if the gif is ever re-exported.
-const DOWN_GIF_DURATION_MS = 1640;
+const ARTIST_URL = "https://www.instagram.com/ojisanhara/";
 const SCROLL_STOP_DELAY_MS = 150;
 const WALK_SPEED_PX_PER_SEC = 40;
+const SPRITE_WIDTH = 90;
+const JUMP_FALL_FPS = DEFAULT_FPS * 2;
 
-type CatState = "idle" | "jumping-up" | "suspended" | "landing";
+type CatState = "idle" | "jumping-up" | "suspended";
 
 export function ScrollCat() {
   const wrapRef = useRef<HTMLDivElement>(null);
-  const imgRef = useRef<HTMLImageElement>(null);
+  const handleRef = useRef<CatSpriteHandle | null>(null);
   const stateRef = useRef<CatState>("idle");
-  const playTokenRef = useRef(0);
-  const [state, setState] = useState<CatState>("idle");
-  const [playToken, setPlayToken] = useState(0);
+  const [, bumpRender] = useState(0);
 
   const xRef = useRef(0);
   const dirRef = useRef(1);
@@ -25,16 +24,10 @@ export function ScrollCat() {
 
   const lastScrollYRef = useRef(0);
   const scrollStopTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const landingTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   function transition(next: CatState) {
     stateRef.current = next;
-    setState(next);
-  }
-
-  function bumpPlayToken() {
-    playTokenRef.current += 1;
-    setPlayToken(playTokenRef.current);
+    bumpRender((n) => n + 1);
   }
 
   // Walking patrol: bounces the cat back and forth across the viewport width,
@@ -47,8 +40,8 @@ export function ScrollCat() {
       const dt = (ts - lastTsRef.current) / 1000;
       lastTsRef.current = ts;
 
-      if (stateRef.current === "idle" && wrapRef.current && imgRef.current) {
-        const maxX = window.innerWidth - imgRef.current.offsetWidth;
+      if (stateRef.current === "idle" && wrapRef.current) {
+        const maxX = window.innerWidth - SPRITE_WIDTH;
         xRef.current += dirRef.current * WALK_SPEED_PX_PER_SEC * dt;
         if (xRef.current >= maxX) {
           xRef.current = maxX;
@@ -57,7 +50,7 @@ export function ScrollCat() {
           xRef.current = 0;
           dirRef.current = 1;
         }
-        // walk.gif's native art faces left, so moving right (dir=1) needs a flip.
+        // The artwork's native pose faces left, so moving right (dir=1) needs a flip.
         wrapRef.current.style.transform = `translateX(${xRef.current}px) scaleX(${-dirRef.current})`;
       }
 
@@ -68,42 +61,43 @@ export function ScrollCat() {
   }, []);
 
   // Scroll reactions: jump on scroll-up, hang suspended on scroll-down, and
-  // only play the falling/landing animation once scrolling actually stops.
+  // only play the falling/landing clip once scrolling actually stops. "down"
+  // already contains its own recovery + walk-off, so it hands back to "walk"
+  // on its own once queued. Jump/fall play at double speed; walk stays at the
+  // sheet's normal pace.
   useEffect(() => {
     lastScrollYRef.current = window.scrollY;
 
-    function enterLanding() {
-      bumpPlayToken();
-      transition("landing");
-      if (landingTimerRef.current) clearTimeout(landingTimerRef.current);
-      landingTimerRef.current = setTimeout(() => {
-        transition("idle");
-      }, DOWN_GIF_DURATION_MS + 80);
+    function settle() {
+      const handle = handleRef.current;
+      if (!handle) return;
+      handle.setFps(JUMP_FALL_FPS);
+      handle.sequence(["down", "walk"]);
     }
 
     function onScroll() {
       const y = window.scrollY;
       const direction = y > lastScrollYRef.current ? "down" : y < lastScrollYRef.current ? "up" : null;
       lastScrollYRef.current = y;
+      const handle = handleRef.current;
 
-      if (stateRef.current === "landing") {
-        // Let the fall/land animation finish undisturbed once it's started.
-        return;
-      }
-
-      if (stateRef.current === "idle") {
+      if (handle && stateRef.current === "idle") {
         if (direction === "up") {
-          bumpPlayToken();
           transition("jumping-up");
+          handle.setFps(JUMP_FALL_FPS);
+          handle.play("up");
         } else if (direction === "down") {
           transition("suspended");
+          handle.setFps(JUMP_FALL_FPS);
+          handle.play("down");
+          handle.goto(0);
         }
       }
 
       if (scrollStopTimerRef.current) clearTimeout(scrollStopTimerRef.current);
       scrollStopTimerRef.current = setTimeout(() => {
         if (stateRef.current === "jumping-up" || stateRef.current === "suspended") {
-          enterLanding();
+          settle();
         }
       }, SCROLL_STOP_DELAY_MS);
     }
@@ -112,31 +106,34 @@ export function ScrollCat() {
     return () => {
       window.removeEventListener("scroll", onScroll);
       if (scrollStopTimerRef.current) clearTimeout(scrollStopTimerRef.current);
-      if (landingTimerRef.current) clearTimeout(landingTimerRef.current);
     };
   }, []);
 
-  const src =
-    state === "idle"
-      ? "/cat/walk.gif"
-      : state === "jumping-up"
-        ? `/cat/up.gif?t=${playToken}`
-        : state === "suspended"
-          ? "/cat/down-frame0.png"
-          : `/cat/down.gif?t=${playToken}`;
-
-  // Jump/fall poses read better bigger than the idle walk cycle.
-  const heightClass = state === "idle" ? "h-[90px]" : "h-[135px]";
+  function handleClipEnd(clip: CatClip) {
+    // Fires when "down" hands off to the queued "walk" — restore normal speed
+    // and resume patrolling.
+    if (clip === "down") {
+      handleRef.current?.setFps(DEFAULT_FPS);
+      transition("idle");
+    }
+  }
 
   return (
-    <div
-      ref={wrapRef}
-      aria-hidden="true"
-      className="pointer-events-none fixed bottom-0 left-0 z-30 will-change-transform"
-    >
-      {/* Animated GIF sprite — next/image would strip the animation. */}
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img ref={imgRef} src={src} alt="" className={`block w-auto ${heightClass}`} draggable={false} />
+    <div ref={wrapRef} className="fixed bottom-0 left-0 z-30 will-change-transform">
+      <a
+        href={ARTIST_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="貓咪插畫原作者 Instagram"
+        className="block"
+      >
+        <CatSprite
+          width={SPRITE_WIDTH}
+          onHandle={(h) => (handleRef.current = h)}
+          onClipEnd={handleClipEnd}
+          className="block"
+        />
+      </a>
     </div>
   );
 }
