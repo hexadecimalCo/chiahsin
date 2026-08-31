@@ -1,4 +1,4 @@
-export type CatClip = "walk" | "up" | "down";
+export type CatClip = "walk" | "up" | "down" | "up2" | "down2";
 
 export interface ClipSpec {
   /** Sprite sheet path, relative to /public */
@@ -29,6 +29,11 @@ export const CAT_CLIPS: Record<CatClip, ClipSpec> = {
   walk: { src: "/cat/walk.png", frames: 36, cols: 6, cellW: 204, cellH: 276, loop: true,  scale: 1, groundNudge: 0  },
   up:   { src: "/cat/up.png",   frames: 17, cols: 5, cellW: 204, cellH: 355, loop: false, scale: 1, groundNudge: 25 },
   down: { src: "/cat/down.png", frames: 41, cols: 7, cellW: 204, cellH: 355, loop: false, scale: 1, groundNudge: 27 },
+  // Second jump/land variant (own GIF source, own crop). Randomly alternated
+  // with up/down at the trigger site — scale/groundNudge tuned separately so
+  // it matches the same on-stage character size.
+  up2:   { src: "/cat/up2.png",   frames: 15, cols: 5, cellW: 204, cellH: 245, loop: false, scale: 1.3, groundNudge: 25 },
+  down2: { src: "/cat/down2.png", frames: 18, cols: 6, cellW: 204, cellH: 249, loop: false, scale: 1.3, groundNudge: 27 },
 };
 
 /** Stage box the clips are composed into. Tallest cell height. */

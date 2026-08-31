@@ -24,6 +24,9 @@ export function ScrollCat() {
 
   const lastScrollYRef = useRef(0);
   const scrollStopTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  // Which jump/land pair (1 = up/down, 2 = up2/down2) this hop is using —
+  // picked once when the hop starts, kept for the matching fall/land clip.
+  const variantRef = useRef<1 | 2>(1);
 
   function transition(next: CatState) {
     stateRef.current = next;
@@ -71,8 +74,9 @@ export function ScrollCat() {
     function settle() {
       const handle = handleRef.current;
       if (!handle) return;
+      const downClip: CatClip = variantRef.current === 2 ? "down2" : "down";
       handle.setFps(JUMP_FALL_FPS);
-      handle.sequence(["down", "walk"]);
+      handle.sequence([downClip, "walk"]);
     }
 
     function onScroll() {
@@ -82,14 +86,18 @@ export function ScrollCat() {
       const handle = handleRef.current;
 
       if (handle && stateRef.current === "idle") {
+        variantRef.current = Math.random() < 0.5 ? 1 : 2;
+        const upClip: CatClip = variantRef.current === 2 ? "up2" : "up";
+        const downClip: CatClip = variantRef.current === 2 ? "down2" : "down";
+
         if (direction === "up") {
           transition("jumping-up");
           handle.setFps(JUMP_FALL_FPS);
-          handle.play("up");
+          handle.play(upClip);
         } else if (direction === "down") {
           transition("suspended");
           handle.setFps(JUMP_FALL_FPS);
-          handle.play("down");
+          handle.play(downClip);
           handle.goto(0);
         }
       }
@@ -110,9 +118,9 @@ export function ScrollCat() {
   }, []);
 
   function handleClipEnd(clip: CatClip) {
-    // Fires when "down" hands off to the queued "walk" — restore normal speed
-    // and resume patrolling.
-    if (clip === "down") {
+    // Fires when "down"/"down2" hands off to the queued "walk" — restore
+    // normal speed and resume patrolling.
+    if (clip === "down" || clip === "down2") {
       handleRef.current?.setFps(DEFAULT_FPS);
       transition("idle");
     }
