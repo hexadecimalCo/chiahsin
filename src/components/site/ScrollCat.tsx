@@ -9,6 +9,8 @@ const SCROLL_STOP_DELAY_MS = 50;
 const WALK_SPEED_PX_PER_SEC = 40;
 const SPRITE_WIDTH = 90;
 const JUMP_FALL_FPS = DEFAULT_FPS * 3;
+// Chance of picking the newer up2/down2 pair over the original up/down pair.
+const VARIANT_2_PROBABILITY = 0.66;
 
 type CatState = "idle" | "jumping-up" | "suspended";
 
@@ -86,7 +88,7 @@ export function ScrollCat() {
       const handle = handleRef.current;
 
       if (handle && stateRef.current === "idle") {
-        variantRef.current = Math.random() < 0.5 ? 1 : 2;
+        variantRef.current = Math.random() < VARIANT_2_PROBABILITY ? 2 : 1;
         const upClip: CatClip = variantRef.current === 2 ? "up2" : "up";
         const downClip: CatClip = variantRef.current === 2 ? "down2" : "down";
 
