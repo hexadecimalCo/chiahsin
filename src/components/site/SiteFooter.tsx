@@ -36,7 +36,7 @@ export function SiteFooter() {
             </a>
           </p>
         )}
-        <p className="mt-8 text-xs text-brand-navy/50">
+        <p className="mt-8 text-[13px] text-brand-navy/70">
           © {new Date().getFullYear()} {siteInfo.firmName}. {t("rights")}
         </p>
       </div>

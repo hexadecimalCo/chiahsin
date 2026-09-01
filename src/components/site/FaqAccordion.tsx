@@ -21,14 +21,14 @@ export function FaqAccordion({ faqs }: { faqs: Faq[] }) {
               onClick={() => setOpenIndex(isOpen ? null : index)}
               className="flex w-full cursor-pointer items-center gap-5 py-6 text-left"
             >
-              <span className="preview-mono flex-none text-xs text-brand-navy/40">
+              <span className="preview-mono flex-none text-xs text-brand-gold">
                 {String(index + 1).padStart(2, "0")}
               </span>
-              <span className="flex-1 font-medium text-brand-navy">{faq.question}</span>
+              <span className="flex-1 text-xl leading-[1.5] font-medium text-brand-navy">{faq.question}</span>
               <span className="shrink-0 text-neutral-400">{isOpen ? "−" : "+"}</span>
             </button>
             {isOpen && (
-              <div className="ml-9 space-y-3 pb-6 text-sm text-neutral-500">
+              <div className="ml-9 max-w-[720px] space-y-3 pb-6 text-base leading-[1.9] text-brand-navy-hover">
                 {faq.answer.map((paragraph, paragraphIndex) => {
                   if (paragraph.linkText && paragraph.href) {
                     const [before, after] = paragraph.text.split(paragraph.linkText);

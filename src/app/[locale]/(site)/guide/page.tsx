@@ -56,7 +56,7 @@ export default async function GuidePage({
             className="preview-guide-title max-w-4xl font-medium leading-[1.1] tracking-[-0.045em] text-brand-navy"
             lines={GUIDE_TITLE_LINES[locale].map((text, i) => ({
               text,
-              className: i === GUIDE_TITLE_LINES[locale].length - 1 ? "text-brand-gold" : undefined,
+              className: i === GUIDE_TITLE_LINES[locale].length - 1 ? "text-brand-navy-hover" : undefined,
             }))}
           />
           <p className="mt-8 max-w-2xl text-lg leading-relaxed" style={{ color: "var(--preview-text-secondary)" }}>
@@ -203,7 +203,7 @@ export default async function GuidePage({
         <div className="mx-auto max-w-[1280px] px-11">
           <h2
             className="font-medium tracking-[-0.045em] text-brand-navy"
-            style={{ fontSize: "clamp(28px, 5vw, 46px)" }}
+            style={{ fontSize: "clamp(26px, 3.4vw, 40px)" }}
           >
             {closingCta.text}
           </h2>

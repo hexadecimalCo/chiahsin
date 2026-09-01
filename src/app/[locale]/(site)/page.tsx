@@ -48,7 +48,7 @@ export default async function Home({
       <ScrollProgressBar />
 
       {/* Hero */}
-      <section className="relative overflow-hidden pt-20 pb-24">
+      <section className="relative overflow-hidden pt-24 pb-32">
         <DecorativeCircles />
         <div className="relative z-10 mx-auto max-w-[1280px] px-11">
           <p className="preview-mono mb-6 text-xs font-bold tracking-[0.2em] text-brand-gold">
@@ -56,10 +56,10 @@ export default async function Home({
           </p>
           <RevealLines
             as="h1"
-            className="preview-hero-title max-w-4xl font-medium leading-[1.05] tracking-[-0.045em] text-brand-navy"
+            className="preview-hero-title max-w-[1000px] font-medium leading-[1.15] tracking-[-0.01em] text-brand-navy"
             lines={HERO_TITLE_LINES[locale].map((text, i) => ({
               text,
-              className: i === HERO_TITLE_LINES[locale].length - 1 ? "text-brand-gold" : undefined,
+              className: i === HERO_TITLE_LINES[locale].length - 1 ? "text-brand-navy-hover" : undefined,
             }))}
           />
           <p className="mt-8 max-w-2xl text-lg" style={{ color: "var(--preview-text-secondary)" }}>
@@ -68,7 +68,7 @@ export default async function Home({
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <Link
               href={heroContent.primaryCta.href}
-              className="rounded-md bg-brand-navy-2 px-7 py-3.5 text-sm font-medium text-brand-on-dark transition hover:bg-brand-navy-hover"
+              className="rounded-md bg-brand-gold px-7 py-3.5 text-sm font-medium text-brand-on-dark transition hover:bg-brand-gold-hover"
             >
               {heroContent.primaryCta.label}
             </Link>
@@ -89,27 +89,27 @@ export default async function Home({
 
       {/* Core services */}
       <section id="services" className="scroll-mt-20 mx-auto max-w-[1280px] px-11 py-24">
-        <p className="preview-mono mb-2 text-xs font-semibold tracking-[0.15em] text-brand-gold">
+        <p className="preview-mono mb-4 text-xs font-semibold tracking-[0.15em] text-brand-gold">
           {sectionHeaders.services.eyebrow}
         </p>
-        <h2 className="text-3xl font-medium tracking-[-0.03em] text-brand-navy sm:text-[46px]">
+        <h2 className="text-3xl font-medium leading-[1.25] tracking-[-0.015em] text-brand-navy sm:text-[40px]">
           {sectionHeaders.services.title}
         </h2>
-        <p className="mt-4 max-w-2xl text-neutral-500">{sectionHeaders.services.subtitle}</p>
+        <p className="mt-5 max-w-2xl text-neutral-500">{sectionHeaders.services.subtitle}</p>
 
-        <div className="mt-14 divide-y divide-brand-gray-300">
+        <div className="mt-12 divide-y divide-brand-gray-300">
           {coreServices.map((service) => (
-            <div key={service.number} className="preview-service-grid py-10">
+            <div key={service.number} className="preview-service-grid py-12">
               <p
                 className="preview-mono font-medium leading-none tracking-[-0.05em]"
-                style={{ fontSize: "96px", color: "var(--preview-decorative-number)" }}
+                style={{ fontSize: "56px", color: "var(--preview-decorative-number)" }}
               >
                 {service.number}
               </p>
               <div>
                 <h3
-                  className="font-medium tracking-[-0.03em] text-brand-navy"
-                  style={{ fontSize: "44px" }}
+                  className="font-medium leading-[1.3] tracking-[-0.015em] text-brand-navy"
+                  style={{ fontSize: "32px" }}
                 >
                   {service.title}
                 </h3>
@@ -120,7 +120,7 @@ export default async function Home({
               <div className="preview-service-actions">
                 <Link
                   href={service.href}
-                  className="inline-block whitespace-nowrap rounded-full border border-brand-gold px-6 py-2.5 text-sm font-medium text-brand-gold transition hover:border-brand-gold-hover hover:text-brand-gold-hover"
+                  className="inline-block whitespace-nowrap rounded-md border border-brand-gold px-6 py-2.5 text-sm font-medium text-brand-gold transition hover:border-brand-gold-hover hover:text-brand-gold-hover"
                 >
                   {service.linkLabel} →
                 </Link>
@@ -128,10 +128,10 @@ export default async function Home({
             </div>
           ))}
 
-          <div className="preview-service-grid py-10">
+          <div className="preview-service-grid py-12">
             <p
               className="preview-mono font-medium leading-none tracking-[-0.05em]"
-              style={{ fontSize: "96px", color: "var(--preview-decorative-number)" }}
+              style={{ fontSize: "56px", color: "var(--preview-decorative-number)" }}
             >
               05
             </p>
@@ -140,8 +140,8 @@ export default async function Home({
                 {article25Promo.eyebrow}
               </p>
               <h3
-                className="mt-2 font-medium tracking-[-0.03em] text-brand-navy"
-                style={{ fontSize: "44px" }}
+                className="mt-2 font-medium leading-[1.3] tracking-[-0.015em] text-brand-navy"
+                style={{ fontSize: "32px" }}
               >
                 {article25Promo.title}
               </h3>
@@ -152,7 +152,7 @@ export default async function Home({
             <div className="preview-service-actions">
               <Link
                 href={article25Promo.href}
-                className="inline-block whitespace-nowrap rounded-full border border-brand-gold px-6 py-2.5 text-sm font-medium text-brand-gold transition hover:border-brand-gold-hover hover:text-brand-gold-hover"
+                className="inline-block whitespace-nowrap rounded-md border border-brand-gold px-6 py-2.5 text-sm font-medium text-brand-gold transition hover:border-brand-gold-hover hover:text-brand-gold-hover"
               >
                 {article25Promo.linkLabel} →
               </Link>
@@ -166,10 +166,10 @@ export default async function Home({
         <div className="mx-auto max-w-[1280px] px-11">
           <div className="grid grid-cols-1 gap-12 md:grid-cols-[1fr_460px]">
             <div>
-              <p className="preview-mono mb-2 text-xs font-semibold tracking-[0.15em] text-brand-gold">
+              <p className="preview-mono mb-4 text-xs font-semibold tracking-[0.15em] text-brand-gold">
                 {sectionHeaders.about.eyebrow}
               </p>
-              <h2 className="text-3xl font-medium tracking-[-0.03em] text-brand-navy sm:text-[46px]">
+              <h2 className="text-3xl font-medium leading-[1.25] tracking-[-0.015em] text-brand-navy sm:text-[40px]">
                 {sectionHeaders.about.title}
               </h2>
               <p className="mt-6 text-lg font-medium text-brand-navy">{about.name}</p>
@@ -188,7 +188,7 @@ export default async function Home({
                     >
                       {group.label}
                     </p>
-                    <ul className="space-y-1.5 text-sm leading-relaxed text-neutral-600">
+                    <ul className="space-y-1.5 text-base leading-relaxed text-neutral-600">
                       {group.items.map((item) => (
                         <li key={item}>{item}</li>
                       ))}
@@ -218,15 +218,15 @@ export default async function Home({
 
       {/* Setup process */}
       <section className="mx-auto max-w-[1280px] px-11 py-24">
-        <p className="preview-mono mb-2 text-xs font-semibold tracking-[0.15em] text-brand-gold">
+        <p className="preview-mono mb-4 text-xs font-semibold tracking-[0.15em] text-brand-gold">
           {sectionHeaders.process.eyebrow}
         </p>
-        <h2 className="text-3xl font-medium tracking-[-0.03em] text-brand-navy sm:text-[46px]">
+        <h2 className="text-3xl font-medium leading-[1.25] tracking-[-0.015em] text-brand-navy sm:text-[40px]">
           {sectionHeaders.process.title}
         </h2>
-        <p className="mt-4 max-w-2xl text-neutral-500">{sectionHeaders.process.subtitle}</p>
+        <p className="mt-5 max-w-2xl text-neutral-500">{sectionHeaders.process.subtitle}</p>
 
-        <div className="proc-timeline mt-14">
+        <div className="proc-timeline mt-12">
           <div className="proc-track" aria-hidden="true">
             <div className="proc-track-fill" />
           </div>
@@ -265,18 +265,18 @@ export default async function Home({
 
       {/* Client types */}
       <section className="mx-auto max-w-[1280px] px-11 py-24">
-        <p className="preview-mono mb-2 text-xs font-semibold tracking-[0.15em] text-brand-gold">
+        <p className="preview-mono mb-4 text-xs font-semibold tracking-[0.15em] text-brand-gold">
           {sectionHeaders.clientTypes.eyebrow}
         </p>
-        <h2 className="text-3xl font-medium tracking-[-0.03em] text-brand-navy sm:text-[46px]">
+        <h2 className="text-3xl font-medium leading-[1.25] tracking-[-0.015em] text-brand-navy sm:text-[40px]">
           {sectionHeaders.clientTypes.title}
         </h2>
 
-        <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-3">
+        <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
           {clientTypes.map((client) => (
-            <div key={client.title} className="preview-fade-up bg-brand-cream p-6">
-              <h3 className="mb-2 font-medium text-brand-navy">{client.title}</h3>
-              <p className="text-sm text-neutral-600">{client.description}</p>
+            <div key={client.title} className="preview-fade-up bg-brand-cream p-8">
+              <h3 className="mb-3 text-xl leading-[1.5] font-medium text-brand-navy">{client.title}</h3>
+              <p className="text-base leading-[1.85] text-neutral-600">{client.description}</p>
             </div>
           ))}
         </div>
@@ -285,10 +285,10 @@ export default async function Home({
       {/* FAQ */}
       <section className="bg-brand-cream py-24">
         <div className="mx-auto max-w-[1280px] px-11">
-          <p className="preview-mono mb-2 text-xs font-semibold tracking-[0.15em] text-brand-gold">
+          <p className="preview-mono mb-4 text-xs font-semibold tracking-[0.15em] text-brand-gold">
             {sectionHeaders.faq.eyebrow}
           </p>
-          <h2 className="mb-10 text-3xl font-medium tracking-[-0.03em] text-brand-navy sm:text-[46px]">
+          <h2 className="mb-12 text-3xl font-medium leading-[1.25] tracking-[-0.015em] text-brand-navy sm:text-[40px]">
             {sectionHeaders.faq.title}
           </h2>
           <FaqAccordion faqs={faqs} />
@@ -296,24 +296,34 @@ export default async function Home({
       </section>
 
       {/* CTA */}
-      <section className="mx-auto max-w-[1280px] px-11 py-28 text-center">
+      <section className="mx-auto max-w-[1280px] px-11 py-24 text-center">
         <h2
-          className="font-medium tracking-[-0.045em] text-brand-navy"
-          style={{ fontSize: "clamp(32px, 6vw, 84px)" }}
+          className="font-medium leading-[1.15] tracking-[-0.01em] text-brand-navy"
+          style={{ fontSize: "clamp(30px, 3.6vw, 52px)" }}
         >
           {sectionHeaders.cta.title}
         </h2>
         <p className="mx-auto mt-6 max-w-xl text-neutral-500">{sectionHeaders.cta.subtitle}</p>
         <Link
           href={heroContent.primaryCta.href}
-          className="mt-8 inline-block rounded-md bg-brand-navy-2 px-8 py-4 text-sm font-medium text-brand-on-dark transition hover:bg-brand-navy-hover"
+          className="mt-8 inline-block rounded-md bg-brand-gold px-8 py-4 text-sm font-medium text-brand-on-dark transition hover:bg-brand-gold-hover"
         >
           {sectionHeaders.cta.cta}
         </Link>
 
-        <div className="mx-auto mt-12 flex max-w-2xl flex-wrap items-center justify-center gap-x-8 gap-y-3 border-t border-brand-gray-300 pt-8 text-sm text-neutral-500">
-          <span>{siteInfo.phone}</span>
-          <span>{siteInfo.email}</span>
+        <div className="mx-auto mt-12 grid max-w-2xl grid-cols-2 gap-x-6 gap-y-4 border-t border-brand-gray-300 pt-8 text-lg text-brand-navy sm:gap-x-12">
+          <a
+            href="tel:0229688686"
+            className="inline-block w-fit border-b border-brand-gold/40 transition hover:border-brand-gold"
+          >
+            {siteInfo.phone}
+          </a>
+          <a
+            href="mailto:chhsu@chiahsin.co"
+            className="inline-block w-fit border-b border-brand-gold/40 transition hover:border-brand-gold"
+          >
+            {siteInfo.email}
+          </a>
           <span>LINE {siteInfo.line}</span>
           <span>{siteInfo.address}</span>
         </div>
