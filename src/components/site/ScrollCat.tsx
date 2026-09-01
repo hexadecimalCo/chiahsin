@@ -9,8 +9,16 @@ const SCROLL_STOP_DELAY_MS = 50;
 const WALK_SPEED_PX_PER_SEC = 40;
 const SPRITE_WIDTH = 180;
 const JUMP_FALL_FPS = DEFAULT_FPS * 3;
+const DRAG_THRESHOLD_PX = 4;
 
 type CatState = "idle" | "jumping-up" | "suspended" | "petting";
+
+type DragSession = {
+  pointerId: number;
+  startClientX: number;
+  startX: number;
+  moved: boolean;
+};
 
 export function ScrollCat() {
   const wrapRef = useRef<HTMLDivElement>(null);
@@ -24,6 +32,9 @@ export function ScrollCat() {
 
   const lastScrollYRef = useRef(0);
   const scrollStopTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const dragRef = useRef<DragSession | null>(null);
+  const suppressClickRef = useRef(false);
 
   function transition(next: CatState) {
     stateRef.current = next;
@@ -123,6 +134,11 @@ export function ScrollCat() {
   // stays over the cat, then let it play out once the pointer leaves. Only
   // triggers from "idle" so it doesn't interrupt a hop in progress.
   function handlePointerEnter() {
+    // Pointer capture keeps a drag's move/up events routed here even once
+    // the cursor visually leaves the sprite, but this mouseenter/mouseleave
+    // pair fires from real cursor position and would otherwise fight the
+    // drag's own state changes.
+    if (dragRef.current) return;
     const handle = handleRef.current;
     if (!handle || stateRef.current !== "idle") return;
     transition("petting");
@@ -131,8 +147,75 @@ export function ScrollCat() {
   }
 
   function handlePointerLeave() {
+    if (dragRef.current) return;
     if (stateRef.current !== "petting") return;
     handleRef.current?.release(["walk"]);
+  }
+
+  // Drag-to-reposition: click-and-drag (or touch-and-drag) the cat left/right.
+  // Reuses the "petting" state/clip rather than adding a new one, since being
+  // held is a reasonable stand-in and there's no dedicated drag artwork.
+  function handleDragStart(e: React.PointerEvent<HTMLAnchorElement>) {
+    if (e.pointerType === "mouse" && e.button !== 0) return;
+    if (stateRef.current !== "idle" && stateRef.current !== "petting") return;
+    dragRef.current = {
+      pointerId: e.pointerId,
+      startClientX: e.clientX,
+      startX: xRef.current,
+      moved: false,
+    };
+    e.currentTarget.setPointerCapture(e.pointerId);
+  }
+
+  function handleDragMove(e: React.PointerEvent<HTMLAnchorElement>) {
+    const drag = dragRef.current;
+    if (!drag || drag.pointerId !== e.pointerId) return;
+    const dx = e.clientX - drag.startClientX;
+
+    if (!drag.moved) {
+      if (Math.abs(dx) < DRAG_THRESHOLD_PX) return;
+      drag.moved = true;
+      // Rebase onto the current position so the drag picks up smoothly even
+      // if the idle patrol moved the cat during the pre-threshold window,
+      // instead of snapping back to the spot captured at pointerdown.
+      drag.startX = xRef.current - dx;
+      if (stateRef.current === "idle") {
+        transition("petting");
+        handleRef.current?.setFps(DEFAULT_FPS);
+        handleRef.current?.playHeld("pet");
+      }
+    }
+
+    const maxX = window.innerWidth - SPRITE_WIDTH;
+    const nextX = Math.min(maxX, Math.max(0, drag.startX + dx));
+    if (nextX !== xRef.current) {
+      dirRef.current = nextX > xRef.current ? 1 : -1;
+    }
+    xRef.current = nextX;
+    if (wrapRef.current) {
+      wrapRef.current.style.transform = `translateX(${xRef.current}px) scaleX(${-dirRef.current})`;
+    }
+  }
+
+  function handleDragEnd(e: React.PointerEvent<HTMLAnchorElement>) {
+    const drag = dragRef.current;
+    if (!drag || drag.pointerId !== e.pointerId) return;
+    dragRef.current = null;
+    if (drag.moved) {
+      // A drag ended on an <a> still fires a click afterward; swallow the
+      // next one so dragging doesn't also navigate to the artist's profile.
+      suppressClickRef.current = true;
+      if (stateRef.current === "petting") {
+        handleRef.current?.release(["walk"]);
+      }
+    }
+  }
+
+  function handleClick(e: React.MouseEvent<HTMLAnchorElement>) {
+    if (suppressClickRef.current) {
+      suppressClickRef.current = false;
+      e.preventDefault();
+    }
   }
 
   return (
@@ -141,10 +224,16 @@ export function ScrollCat() {
         href={ARTIST_URL}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="貓咪插畫原作者 Instagram"
-        className="block"
+        aria-label="貓咪插畫原作者 Instagram（可拖曳左右移動）"
+        className="block cursor-grab touch-none active:cursor-grabbing"
         onMouseEnter={handlePointerEnter}
         onMouseLeave={handlePointerLeave}
+        onPointerDown={handleDragStart}
+        onPointerMove={handleDragMove}
+        onPointerUp={handleDragEnd}
+        onPointerCancel={handleDragEnd}
+        onDragStart={(e) => e.preventDefault()}
+        onClick={handleClick}
       >
         <CatSprite
           width={SPRITE_WIDTH}
