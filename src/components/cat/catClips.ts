@@ -31,18 +31,18 @@ export interface ClipSpec {
  * per-clip scale or groundNudge correction needed here.
  */
 export const CAT_CLIPS: Record<CatClip, ClipSpec> = {
-  walk: { src: "/cat/walk.png", frames: 50, cols: 10, cellW: 204, cellH: 219, loop: true,  scale: 1, groundNudge: 0 },
-  up:   { src: "/cat/up.png",   frames: 6,  cols: 3,  cellW: 204, cellH: 219, loop: false, scale: 1, groundNudge: 0 },
-  down: { src: "/cat/down.png", frames: 18, cols: 6,  cellW: 204, cellH: 219, loop: false, scale: 1, groundNudge: 0 },
+  walk: { src: "/cat/walk.png", frames: 50, cols: 10, cellW: 408, cellH: 437, loop: true,  scale: 1, groundNudge: 0 },
+  up:   { src: "/cat/up.png",   frames: 6,  cols: 3,  cellW: 408, cellH: 437, loop: false, scale: 1, groundNudge: 0 },
+  down: { src: "/cat/down.png", frames: 18, cols: 6,  cellW: 408, cellH: 437, loop: false, scale: 1, groundNudge: 0 },
   // Hover reaction: plays in, loops the middle "content" segment while the
   // pointer stays over the cat, and only plays out to the last frame once
   // released (see CatSpriteHandle.playHeld/release).
-  pet:  { src: "/cat/pet.png",  frames: 24, cols: 6,  cellW: 204, cellH: 219, loop: false, scale: 1, groundNudge: 0, loopRange: [3, 20] },
+  pet:  { src: "/cat/pet.png",  frames: 24, cols: 6,  cellW: 408, cellH: 437, loop: false, scale: 1, groundNudge: 0, loopRange: [3, 20] },
 };
 
 /** Stage box the clips are composed into. Tallest cell height. */
-export const STAGE_W = 204;
-export const STAGE_H = 219;
+export const STAGE_W = 408;
+export const STAGE_H = 437;
 
 /** Default playback rate, shared by all clips. */
 export const DEFAULT_FPS = 16;
