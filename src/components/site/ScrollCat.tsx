@@ -7,12 +7,10 @@ import { DEFAULT_FPS, type CatClip } from "@/components/cat/catClips";
 const ARTIST_URL = "https://www.instagram.com/ojisanhara/";
 const SCROLL_STOP_DELAY_MS = 50;
 const WALK_SPEED_PX_PER_SEC = 40;
-const SPRITE_WIDTH = 90;
+const SPRITE_WIDTH = 180;
 const JUMP_FALL_FPS = DEFAULT_FPS * 3;
-// Chance of picking the newer up2/down2 pair over the original up/down pair.
-const VARIANT_2_PROBABILITY = 0.66;
 
-type CatState = "idle" | "jumping-up" | "suspended";
+type CatState = "idle" | "jumping-up" | "suspended" | "petting";
 
 export function ScrollCat() {
   const wrapRef = useRef<HTMLDivElement>(null);
@@ -26,9 +24,6 @@ export function ScrollCat() {
 
   const lastScrollYRef = useRef(0);
   const scrollStopTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  // Which jump/land pair (1 = up/down, 2 = up2/down2) this hop is using —
-  // picked once when the hop starts, kept for the matching fall/land clip.
-  const variantRef = useRef<1 | 2>(1);
 
   function transition(next: CatState) {
     stateRef.current = next;
@@ -68,17 +63,17 @@ export function ScrollCat() {
   // Scroll reactions: jump on scroll-up, hang suspended on scroll-down, and
   // only play the falling/landing clip once scrolling actually stops. "down"
   // already contains its own recovery + walk-off, so it hands back to "walk"
-  // on its own once queued. Jump/fall play at double speed; walk stays at the
-  // sheet's normal pace.
+  // on its own once queued. Jump/fall play at triple speed; walk stays at the
+  // sheet's normal pace. Only fires from "idle" — ignored mid-hop or while
+  // being petted.
   useEffect(() => {
     lastScrollYRef.current = window.scrollY;
 
     function settle() {
       const handle = handleRef.current;
       if (!handle) return;
-      const downClip: CatClip = variantRef.current === 2 ? "down2" : "down";
       handle.setFps(JUMP_FALL_FPS);
-      handle.sequence([downClip, "walk"]);
+      handle.sequence(["down", "walk"]);
     }
 
     function onScroll() {
@@ -88,18 +83,14 @@ export function ScrollCat() {
       const handle = handleRef.current;
 
       if (handle && stateRef.current === "idle") {
-        variantRef.current = Math.random() < VARIANT_2_PROBABILITY ? 2 : 1;
-        const upClip: CatClip = variantRef.current === 2 ? "up2" : "up";
-        const downClip: CatClip = variantRef.current === 2 ? "down2" : "down";
-
         if (direction === "up") {
           transition("jumping-up");
           handle.setFps(JUMP_FALL_FPS);
-          handle.play(upClip);
+          handle.play("up");
         } else if (direction === "down") {
           transition("suspended");
           handle.setFps(JUMP_FALL_FPS);
-          handle.play(downClip);
+          handle.play("down");
           handle.goto(0);
         }
       }
@@ -120,12 +111,28 @@ export function ScrollCat() {
   }, []);
 
   function handleClipEnd(clip: CatClip) {
-    // Fires when "down"/"down2" hands off to the queued "walk" — restore
+    // Fires when "down" or "pet" hands off to the queued "walk" — restore
     // normal speed and resume patrolling.
-    if (clip === "down" || clip === "down2") {
+    if (clip === "down" || clip === "pet") {
       handleRef.current?.setFps(DEFAULT_FPS);
       transition("idle");
     }
+  }
+
+  // Hover reaction: loop the "content" segment of "pet" while the pointer
+  // stays over the cat, then let it play out once the pointer leaves. Only
+  // triggers from "idle" so it doesn't interrupt a hop in progress.
+  function handlePointerEnter() {
+    const handle = handleRef.current;
+    if (!handle || stateRef.current !== "idle") return;
+    transition("petting");
+    handle.setFps(DEFAULT_FPS);
+    handle.playHeld("pet");
+  }
+
+  function handlePointerLeave() {
+    if (stateRef.current !== "petting") return;
+    handleRef.current?.release(["walk"]);
   }
 
   return (
@@ -136,6 +143,8 @@ export function ScrollCat() {
         rel="noopener noreferrer"
         aria-label="貓咪插畫原作者 Instagram"
         className="block"
+        onMouseEnter={handlePointerEnter}
+        onMouseLeave={handlePointerLeave}
       >
         <CatSprite
           width={SPRITE_WIDTH}

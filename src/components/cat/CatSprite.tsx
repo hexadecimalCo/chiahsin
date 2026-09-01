@@ -14,6 +14,19 @@ import {
 export interface CatSpriteHandle {
   play: (clip: CatClip) => void;
   sequence: (clips: CatClip[]) => void;
+  /**
+   * Plays a clip from frame 0 and, once it reaches the end of its
+   * `loopRange`, keeps bouncing back to the start of that range instead of
+   * continuing — for as long as the hold lasts. Call `release` to let it
+   * fall through to the clip's real ending.
+   */
+  playHeld: (clip: CatClip) => void;
+  /**
+   * Ends a `playHeld` hold: the current clip stops bouncing within its
+   * `loopRange` and plays on to its last frame, then continues into
+   * `thenClips` (if given) same as `sequence`.
+   */
+  release: (thenClips?: CatClip[]) => void;
   stop: () => void;
   goto: (frame: number) => void;
   setFps: (fps: number) => void;
@@ -24,9 +37,9 @@ export interface CatSpriteProps {
   initialClip?: CatClip;
   /** Frames per second, 4–30. Default 16. */
   fps?: number;
-  /** Rendered width in CSS px; height follows the 204×355 stage ratio. */
+  /** Rendered width in CSS px; height follows the stage's aspect ratio. */
   width?: number;
-  /** Called once all three sheets have decoded. */
+  /** Called once all sheets have decoded. */
   onReady?: () => void;
   /** Called when a non-looping clip reaches its last frame. */
   onClipEnd?: (clip: CatClip) => void;
@@ -60,6 +73,7 @@ export default function CatSprite({
   const playingRef = useRef(true);
   const fpsRef = useRef(fps);
   const queueRef = useRef<CatClip[]>([]);
+  const heldRef = useRef(false);
   const rafRef = useRef<number | null>(null);
   const lastRef = useRef(0);
   const [ready, setReady] = useState(false);
@@ -83,7 +97,7 @@ export default function CatSprite({
     ctx.drawImage(sheet, sx, sy, sw, sh, dx, dy, dw, dh);
   }, []);
 
-  // Load all three sheets before starting, so no clip stutters on first play.
+  // Load all sheets before starting, so no clip stutters on first play.
   useEffect(() => {
     let cancelled = false;
     let left = Object.keys(CAT_CLIPS).length;
@@ -116,7 +130,9 @@ export default function CatSprite({
       if (!playingRef.current) return;
 
       const spec = CAT_CLIPS[clipRef.current];
-      if (frameRef.current < spec.frames - 1) {
+      if (heldRef.current && spec.loopRange && frameRef.current >= spec.loopRange[1]) {
+        frameRef.current = spec.loopRange[0];
+      } else if (frameRef.current < spec.frames - 1) {
         frameRef.current += 1;
       } else if (queueRef.current.length > 0) {
         onClipEnd?.(clipRef.current);
@@ -143,6 +159,7 @@ export default function CatSprite({
         clipRef.current = clip;
         frameRef.current = 0;
         queueRef.current = [];
+        heldRef.current = false;
         playingRef.current = true;
         draw();
       },
@@ -152,8 +169,22 @@ export default function CatSprite({
         clipRef.current = first;
         frameRef.current = 0;
         queueRef.current = rest;
+        heldRef.current = false;
         playingRef.current = true;
         draw();
+      },
+      playHeld: (clip) => {
+        clipRef.current = clip;
+        frameRef.current = 0;
+        queueRef.current = [];
+        heldRef.current = true;
+        playingRef.current = true;
+        draw();
+      },
+      release: (thenClips = []) => {
+        heldRef.current = false;
+        queueRef.current = thenClips;
+        playingRef.current = true;
       },
       stop: () => {
         playingRef.current = false;

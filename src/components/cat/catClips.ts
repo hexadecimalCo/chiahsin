@@ -1,4 +1,4 @@
-export type CatClip = "walk" | "up" | "down" | "up2" | "down2";
+export type CatClip = "walk" | "up" | "down" | "pet";
 
 export interface ClipSpec {
   /** Sprite sheet path, relative to /public */
@@ -17,28 +17,32 @@ export interface ClipSpec {
   scale: number;
   /** Vertical nudge in px so every clip's ground line lands on the same row */
   groundNudge: number;
+  /**
+   * [start, end] frame range that repeats while a clip is "held" (see
+   * CatSpriteHandle.playHeld/release). Only meaningful for clips driven via
+   * playHeld — ignored otherwise.
+   */
+  loopRange?: [number, number];
 }
 
 /**
- * The three clips were exported from separate GIFs at slightly different zooms
- * and with different amounts of empty space under the ground shadow, so each
- * carries its own scale and groundNudge. These values are approved — changing
- * them makes the cat jump or float between clips.
+ * All four clips were exported from the same 420x450 canvas at matching
+ * zoom/crop, so a single uniform resize keeps them in proportion — no
+ * per-clip scale or groundNudge correction needed here.
  */
 export const CAT_CLIPS: Record<CatClip, ClipSpec> = {
-  walk: { src: "/cat/walk.png", frames: 36, cols: 6, cellW: 204, cellH: 276, loop: true,  scale: 1, groundNudge: 0  },
-  up:   { src: "/cat/up.png",   frames: 17, cols: 5, cellW: 204, cellH: 355, loop: false, scale: 1, groundNudge: 25 },
-  down: { src: "/cat/down.png", frames: 41, cols: 7, cellW: 204, cellH: 355, loop: false, scale: 1, groundNudge: 27 },
-  // Second jump/land variant (own GIF source, own crop). Randomly alternated
-  // with up/down at the trigger site — scale/groundNudge tuned separately so
-  // it matches the same on-stage character size.
-  up2:   { src: "/cat/up2.png",   frames: 15, cols: 5, cellW: 204, cellH: 245, loop: false, scale: 1.3, groundNudge: 25 },
-  down2: { src: "/cat/down2.png", frames: 18, cols: 6, cellW: 204, cellH: 249, loop: false, scale: 1.3, groundNudge: 27 },
+  walk: { src: "/cat/walk.png", frames: 50, cols: 10, cellW: 204, cellH: 219, loop: true,  scale: 1, groundNudge: 0 },
+  up:   { src: "/cat/up.png",   frames: 6,  cols: 3,  cellW: 204, cellH: 219, loop: false, scale: 1, groundNudge: 0 },
+  down: { src: "/cat/down.png", frames: 18, cols: 6,  cellW: 204, cellH: 219, loop: false, scale: 1, groundNudge: 0 },
+  // Hover reaction: plays in, loops the middle "content" segment while the
+  // pointer stays over the cat, and only plays out to the last frame once
+  // released (see CatSpriteHandle.playHeld/release).
+  pet:  { src: "/cat/pet.png",  frames: 24, cols: 6,  cellW: 204, cellH: 219, loop: false, scale: 1, groundNudge: 0, loopRange: [3, 20] },
 };
 
 /** Stage box the clips are composed into. Tallest cell height. */
 export const STAGE_W = 204;
-export const STAGE_H = 355;
+export const STAGE_H = 219;
 
 /** Default playback rate, shared by all clips. */
 export const DEFAULT_FPS = 16;
