@@ -324,8 +324,8 @@ export default async function Home({
           >
             {siteInfo.email}
           </a>
-          <span>LINE {siteInfo.line}</span>
-          <span>{siteInfo.address}</span>
+          <span className="text-left">LINE {siteInfo.line}</span>
+          <span className="text-left">{siteInfo.address}</span>
         </div>
       </section>
 
